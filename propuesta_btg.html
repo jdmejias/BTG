@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BTG Nexus – Propuesta Estratégica Centroamérica 2027</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap');
+
+    :root {
+      --btg-dark: #0a1628;
+      --btg-navy: #0d2444;
+      --btg-blue: #1a4a8a;
+      --btg-accent: #c9a227;
+      --btg-gold: #e8b84b;
+      --btg-light: #f0f4fa;
+      --btg-white: #ffffff;
+      --btg-gray: #8a9bb5;
+      --text-dark: #0a1628;
+      --text-mid: #2d4a6e;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      color: var(--text-dark);
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    /* ===== PAGE BREAKS ===== */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 0;
+      page-break-after: always;
+      position: relative;
+      overflow: hidden;
+    }
+    .page:last-child { page-break-after: auto; }
+
+    @media print {
+      body { background: #fff; }
+      .page { margin: 0; }
+    }
+
+    /* ===== COVER PAGE ===== */
+    .cover {
+      background: linear-gradient(145deg, #0a1628 0%, #0d2444 45%, #1a3a70 100%);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0;
+    }
+
+    .cover-header {
+      padding: 40px 50px 30px;
+      border-bottom: 1px solid rgba(201,162,39,0.3);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cover-logo {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+    }
+    .cover-logo span { color: var(--btg-gold); }
+
+    .cover-badge {
+      background: rgba(201,162,39,0.15);
+      border: 1px solid rgba(201,162,39,0.4);
+      color: var(--btg-gold);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .cover-hero {
+      padding: 60px 50px 50px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .cover-eyebrow {
+      color: var(--btg-gold);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .cover-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 44px;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .cover-subtitle {
+      font-size: 20px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 40px;
+    }
+
+    .cover-divider {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--btg-gold), transparent);
+      margin-bottom: 32px;
+    }
+
+    .cover-desc {
+      font-size: 12px;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.8;
+      max-width: 440px;
+      margin-bottom: 40px;
+    }
+
+    .cover-pillars {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .pillar-chip {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 7px 14px;
+      border-radius: 6px;
+      font-size: 9.5px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.5px;
+    }
+
+    .cover-footer {
+      padding: 28px 50px;
+      background: rgba(0,0,0,0.25);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .cover-footer-item { }
+    .cover-footer-label {
+      font-size: 8.5px;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 4px;
+    }
+    .cover-footer-value {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--btg-gold);
+    }
+    .cover-footer-sub {
+      font-size: 9px;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* ===== INNER PAGE LAYOUT ===== */
+    .inner-page {
+      padding: 32px 44px;
+      background: #fff;
+    }
+
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--btg-blue);
+      margin-bottom: 24px;
+    }
+
+    .page-header-left {}
+    .page-number {
+      font-size: 9px;
+      color: var(--btg-gray);
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .page-section-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--btg-dark);
+      line-height: 1.1;
+    }
+    .page-section-title span { color: var(--btg-blue); }
+
+    .page-logo-mini {
+      font-size: 13px;
+      font-weight: 900;
+      color: var(--btg-navy);
+    }
+    .page-logo-mini span { color: var(--btg-gold); }
+
+    /* ===== SECTION LABEL ===== */
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--btg-blue);
+      color: #fff;
+      font-size: 8.5px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+
+    /* ===== TEXT UTILITIES ===== */
+    h2 {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--btg-dark);
+      margin-bottom: 10px;
+    }
+    h3 {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--btg-navy);
+      margin-bottom: 6px;
+    }
+    p { margin-bottom: 8px; color: #2d3a50; font-size: 10.5px; }
+    ul { padding-left: 16px; margin-bottom: 8px; }
+    ul li { margin-bottom: 4px; font-size: 10.5px; color: #2d3a50; }
+    strong { color: var(--btg-dark); }
+
+    /* ===== CARDS ===== */
+    .card-grid {
+      display: grid;
+      gap: 14px;
+    }
+    .card-grid-2 { grid-template-columns: 1fr 1fr; }
+    .card-grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+    .card {
+      background: var(--btg-light);
+      border-radius: 10px;
+      padding: 16px;
+      border-left: 4px solid var(--btg-blue);
+    }
+    .card.gold { border-left-color: var(--btg-gold); }
+    .card.navy { background: var(--btg-navy); color: #fff; border-left: none; }
+    .card.navy h3 { color: var(--btg-gold); }
+    .card.navy p, .card.navy li { color: rgba(255,255,255,0.85); }
+
+    .card-icon {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+    .card-tag {
+      display: inline-block;
+      background: var(--btg-blue);
+      color: #fff;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 3px;
+      margin-bottom: 8px;
+    }
+    .card.gold .card-tag { background: var(--btg-gold); color: var(--btg-dark); }
+
+    /* ===== STATS BAR ===== */
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: #dce4f0;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    .stat-item {
+      background: #fff;
+      padding: 14px 12px;
+      text-align: center;
+    }
+    .stat-value {
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--btg-blue);
+      line-height: 1;
+      margin-bottom: 3px;
+    }
+    .stat-value.gold { color: var(--btg-accent); }
+    .stat-label {
+      font-size: 8.5px;
+      color: var(--btg-gray);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    /* ===== BUDGET TABLE ===== */
+    .budget-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 16px;
+      font-size: 10.5px;
+    }
+    .budget-table thead tr {
+      background: var(--btg-navy);
+      color: #fff;
+    }
+    .budget-table thead th {
+      padding: 9px 12px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 9px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+    .budget-table tbody tr { border-bottom: 1px solid #e4ecf5; }
+    .budget-table tbody tr:nth-child(even) { background: var(--btg-light); }
+    .budget-table tbody td { padding: 8px 12px; }
+    .budget-table .total-row {
+      background: var(--btg-blue) !important;
+      color: #fff;
+      font-weight: 800;
+    }
+    .budget-table .total-row td { color: #fff; }
+
+    .pct-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pct-track {
+      flex: 1;
+      height: 6px;
+      background: #dce4f0;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .pct-fill {
+      height: 100%;
+      background: var(--btg-blue);
+      border-radius: 3px;
+    }
+    .pct-fill.gold { background: var(--btg-gold); }
+    .pct-fill.green { background: #22c55e; }
+    .pct-fill.purple { background: #8b5cf6; }
+    .pct-fill.red { background: #ef4444; }
+    .pct-fill.teal { background: #0d9488; }
+
+    /* ===== PRODUCT ETF CARDS ===== */
+    .etf-card {
+      border-radius: 12px;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .etf-card.youth {
+      background: linear-gradient(135deg, #1a4a8a 0%, #0d2444 100%);
+      color: #fff;
+    }
+    .etf-card.family {
+      background: linear-gradient(135deg, #c9a227 0%, #9a7510 100%);
+      color: #fff;
+    }
+    .etf-card h3 { font-size: 16px; color: #fff; margin-bottom: 4px; }
+    .etf-card .etf-subtitle { font-size: 10px; opacity: 0.75; margin-bottom: 14px; }
+    .etf-card .etf-ticker {
+      font-size: 24px;
+      font-weight: 900;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 14px;
+      opacity: 0.9;
+    }
+    .etf-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 6px;
+      font-size: 10px;
+      color: rgba(255,255,255,0.9);
+    }
+    .etf-feature-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.6);
+      margin-top: 5px;
+      flex-shrink: 0;
+    }
+    .etf-metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 14px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 10px;
+    }
+    .etf-metric-item {}
+    .etf-metric-val {
+      font-size: 15px;
+      font-weight: 800;
+      color: #fff;
+    }
+    .etf-metric-label {
+      font-size: 8.5px;
+      opacity: 0.7;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    /* ===== PORTFOLIO SALES CARD ===== */
+    .portfolio-card {
+      background: linear-gradient(135deg, #0f3460 0%, #1a5276 100%);
+      color: #fff;
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .portfolio-card h3 { color: var(--btg-gold); font-size: 14px; margin-bottom: 8px; }
+
+    /* ===== RISK TABLE ===== */
+    .risk-table { width: 100%; border-collapse: collapse; font-size: 10px; margin-bottom: 16px; }
+    .risk-table thead tr { background: var(--btg-navy); color: #fff; }
+    .risk-table thead th { padding: 8px 10px; text-align: left; font-size: 9px; letter-spacing: 0.8px; text-transform: uppercase; }
+    .risk-table tbody tr { border-bottom: 1px solid #e4ecf5; }
+    .risk-table tbody tr:nth-child(even) { background: var(--btg-light); }
+    .risk-table tbody td { padding: 7px 10px; vertical-align: top; }
+
+    .risk-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-size: 8px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .risk-alto { background: #fee2e2; color: #991b1b; }
+    .risk-medio { background: #fef3c7; color: #92400e; }
+    .risk-bajo { background: #dcfce7; color: #166534; }
+
+    /* ===== TIMELINE ===== */
+    .timeline {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+      margin-bottom: 16px;
+    }
+    .timeline-item {
+      padding: 14px 16px;
+      border-top: 3px solid #dce4f0;
+      position: relative;
+    }
+    .timeline-item:nth-child(1) { border-top-color: var(--btg-blue); }
+    .timeline-item:nth-child(2) { border-top-color: var(--btg-gold); }
+    .timeline-item:nth-child(3) { border-top-color: #22c55e; }
+    .timeline-year {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--btg-dark);
+      margin-bottom: 4px;
+    }
+    .timeline-amount {
+      font-size: 16px;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+    .timeline-item:nth-child(1) .timeline-amount { color: var(--btg-blue); }
+    .timeline-item:nth-child(2) .timeline-amount { color: var(--btg-accent); }
+    .timeline-item:nth-child(3) .timeline-amount { color: #22c55e; }
+    .timeline-desc { font-size: 9px; color: var(--btg-gray); line-height: 1.5; }
+
+    /* ===== FLOW ===== */
+    .flow-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+    .flow-box {
+      background: var(--btg-light);
+      border: 1px solid #c5d5ea;
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 9.5px;
+      font-weight: 600;
+      color: var(--btg-navy);
+      text-align: center;
+      flex: 1;
+    }
+    .flow-arrow {
+      font-size: 14px;
+      color: var(--btg-blue);
+    }
+
+    /* ===== HIGHLIGHT BOX ===== */
+    .highlight-box {
+      background: linear-gradient(90deg, #0d2444 0%, #1a4a8a 100%);
+      color: #fff;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+    }
+    .highlight-box h3 { color: var(--btg-gold); font-size: 13px; margin-bottom: 6px; }
+    .highlight-box p { color: rgba(255,255,255,0.88); font-size: 10.5px; margin-bottom: 0; }
+
+    /* ===== PAGE FOOTER ===== */
+    .page-footer {
+      position: absolute;
+      bottom: 18px;
+      left: 44px;
+      right: 44px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 8px;
+      color: #b0bccc;
+      border-top: 1px solid #e4ecf5;
+      padding-top: 8px;
+    }
+
+    .spacer-sm { height: 12px; }
+    .spacer-md { height: 20px; }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!-- PAGE 1: COVER                                                -->
+<!-- ============================================================ -->
+<div class="page cover">
+  <div class="cover-header">
+    <div class="cover-logo">BTG<span>Nexus</span></div>
+    <div class="cover-badge">Assessment Center · Generación BTG & TECH 2027-1</div>
+  </div>
+
+  <div class="cover-hero">
+    <div class="cover-eyebrow">Comité Estratégico · Expansión Internacional</div>
+    <div class="cover-title">BTG Nexus<br>Centroamérica</div>
+    <div class="cover-subtitle">Banca de Inversión Inteligente para todos</div>
+    <div class="cover-divider"></div>
+    <div class="cover-desc">
+      Propuesta estratégica de expansión de BTG Pactual hacia Centroamérica mediante una plataforma digital AI-First con dos ETFs propios, soluciones de crédito y venta de cartera para empresas. Rentable, escalable y atractiva para el talento joven.
+    </div>
+    <div class="cover-pillars">
+      <div class="pillar-chip">📊 Presupuesto $25M</div>
+      <div class="pillar-chip">📦 Portafolio</div>
+      <div class="pillar-chip">🤖 Inteligencia Artificial</div>
+      <div class="pillar-chip">⚙️ Operación</div>
+      <div class="pillar-chip">💰 Rentabilidad</div>
+      <div class="pillar-chip">🎓 Talento</div>
+      <div class="pillar-chip">⚠️ Riesgos</div>
+    </div>
+  </div>
+
+  <div class="cover-footer">
+    <div class="cover-footer-item">
+      <div class="cover-footer-label">Presupuesto Total</div>
+      <div class="cover-footer-value">$25,000,000</div>
+      <div class="cover-footer-sub">USD · Capital Ficticio Asignado</div>
+    </div>
+    <div class="cover-footer-item">
+      <div class="cover-footer-label">Break-Even Operativo</div>
+      <div class="cover-footer-value">Mes 22</div>
+      <div class="cover-footer-sub">Horizonte de 3 años (2027–2029)</div>
+    </div>
+    <div class="cover-footer-item">
+      <div class="cover-footer-label">Mercado Objetivo</div>
+      <div class="cover-footer-value">Centroamérica</div>
+      <div class="cover-footer-sub">Hub: Panamá · Expansión: Costa Rica</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE 2: RESUMEN EJECUTIVO + PORTAFOLIO                       -->
+<!-- ============================================================ -->
+<div class="page inner-page">
+  <div class="page-header">
+    <div class="page-header-left">
+      <div class="page-number">01 · Resumen Ejecutivo</div>
+      <div class="page-section-title">La <span>Oportunidad</span> y Nuestra Propuesta</div>
+    </div>
+    <div class="page-logo-mini">BTG<span>Nexus</span></div>
+  </div>
+
+  <div class="highlight-box">
+    <h3>¿Qué es BTG Nexus?</h3>
+    <p>BTG Nexus es la plataforma de inversión y crédito digital de BTG Pactual para Centroamérica. Tres pilares: <strong style="color:#e8b84b">dos ETFs propios</strong> (Familias y Jóvenes), <strong style="color:#e8b84b">financiamiento y venta de cartera</strong> para empresas, y un <strong style="color:#e8b84b">motor de Inteligencia Artificial</strong> que reduce costos, controla el riesgo y personaliza cada experiencia financiera.</p>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-item">
+      <div class="stat-value">50M+</div>
+      <div class="stat-label">Habitantes en CA</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value gold">4%</div>
+      <div class="stat-label">Penetración inversiones</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">60%</div>
+      <div class="stat-label">PyMEs sin crédito</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value gold">$25M</div>
+      <div class="stat-label">Capital disponible</div>
+    </div>
+  </div>
+
+  <div class="section-label">02 · Portafolio de Productos</div>
+  <h2 style="margin-bottom:14px">Tres Soluciones, Un Ecosistema</h2>
+
+  <div class="card-grid card-grid-3">
+    <div class="card">
+      <div class="card-icon">📈</div>
+      <div class="card-tag">ETF – Jóvenes</div>
+      <h3>BTG Pulse ETF</h3>
+      <p>Fondo de inversión cotizado diseñado para la generación digital. Desde $10 USD, acceso a acciones globales (S&P 500, tech), con rendimientos en dólares y app 100% digital.</p>
+    </div>
+    <div class="card gold">
+      <div class="card-icon">🏠</div>
+      <div class="card-tag">ETF – Familias</div>
+      <h3>BTG Patrimonio ETF</h3>
+      <p>Fondo balanceado orientado a metas de largo plazo: educación universitaria, retiro y vivienda. Mixto entre renta fija (bonos) y renta variable (acciones) regional y global.</p>
+    </div>
+    <div class="card navy">
+      <div class="card-icon">🏢</div>
+      <div class="card-tag" style="background:#e8b84b;color:#0a1628">Empresas</div>
+      <h3>BTG Business Credit</h3>
+      <p>Financiamiento de capital de trabajo, factoring de cartera y venta/cesión de portafolios de crédito a BTG Pactual. Liquidez en horas para PyMEs y corporativos.</p>
+    </div>
+  </div>
+
+  <div class="spacer-md"></div>
+
+  <div class="section-label">03 · Operación General</div>
+  <h2 style="margin-bottom:10px">¿Cómo Funciona el Ecosistema?</h2>
+
+  <div class="flow-row">
+    <div class="flow-box">👤 Cliente se registra<br><span style="font-size:8.5px;font-weight:400;color:#6b7a90">KYC biométrico &lt; 3 min</span></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">🤖 IA perfila el riesgo<br><span style="font-size:8.5px;font-weight:400;color:#6b7a90">Scoring alternativo</span></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">📦 Selecciona producto<br><span style="font-size:8.5px;font-weight:400;color:#6b7a90">ETF, crédito o cartera</span></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">💵 Fondos en cuenta<br><span style="font-size:8.5px;font-weight:400;color:#6b7a90">Dispersión inmediata</span></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">📊 Monitoreo IA<br><span style="font-size:8.5px;font-weight:400;color:#6b7a90">Alertas y rebalanceo</span></div>
+  </div>
+
+  <div class="card-grid card-grid-2">
+    <div class="card">
+      <h3>🌎 Entrada Geográfica Faseada</h3>
+      <ul>
+        <li><strong>Año 1 – Panamá:</strong> Licencia bancaria SBP, economía dolarizada (USD), hub financiero regional</li>
+        <li><strong>Año 2 – Costa Rica:</strong> Vía modelo BaaS, hub de talento tech y alta adopción digital</li>
+        <li><strong>Año 3 – El Salvador y Guatemala:</strong> Corredor comercial centroamericano</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>⚙️ Arquitectura Operativa</h3>
+      <ul>
+        <li><strong>Core bancario cloud:</strong> Microservicios en AWS, latencia &lt; 80ms, 99.98% uptime</li>
+        <li><strong>Onboarding:</strong> App móvil iOS/Android + portal web corporativo</li>
+        <li><strong>Soporte:</strong> 80% IA Copilot + 20% humano especializado</li>
+        <li><strong>Pagos:</strong> ACH local, SINPE Móvil (CR), transferencias USD</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>BTG Nexus · Propuesta Estratégica Centroamérica 2027 · Confidencial</span>
+    <span>Generación BTG & TECH 2027-1</span>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE 3: LOS DOS ETFs EN DETALLE                              -->
+<!-- ============================================================ -->
+<div class="page inner-page">
+  <div class="page-header">
+    <div class="page-header-left">
+      <div class="page-number">02 · Portafolio de Productos</div>
+      <div class="page-section-title">Los Dos <span>ETFs Propios</span> de BTG Nexus</div>
+    </div>
+    <div class="page-logo-mini">BTG<span>Nexus</span></div>
+  </div>
+
+  <div class="card-grid card-grid-2" style="margin-bottom:18px">
+    <div class="etf-card youth">
+      <div class="card-tag" style="background:rgba(255,255,255,0.2);color:#fff">ETF #1 · Jóvenes</div>
+      <div class="etf-ticker">BTGPULSE</div>
+      <h3>BTG Pulse ETF</h3>
+      <div class="etf-subtitle">Para jóvenes profesionales y la generación digital (18-35 años)</div>
+      <div class="etf-feature"><div class="etf-feature-dot"></div><span><strong>Composición:</strong> 55% acciones tecnológicas globales (S&P 500 Tech, Nasdaq-100), 25% ETFs emergentes de América Latina, 20% fondos de criptomonedas reguladas (BTC/ETH spot)</span></div>
+      <div class="etf-feature"><div class="etf-feature-dot"></div><span><strong>Inversión mínima:</strong> $10 USD — accesible desde el primer sueldo</span></div>
+      <div class="etf-feature"><div class="etf-feature-dot"></div><span><strong>Gestión:</strong> Rebalanceo automático mensual con IA, sin intervención manual</span></div>
+      <div class="etf-feature"><div class="etf-feature-dot"></div><span><strong>Cashback inteligente:</strong> 1.5% de las compras con tarjeta BTG Pulse se reinvierte automáticamente en el ETF</span></div>
+      <div class="etf-feature"><div class="etf-feature-dot"></div><span><strong>Canal:</strong> 100% App móvil + redondeo automático de gastos</span></div>
+      <div class="etf-metrics">
+        <div class="etf-metric-item">
+          <div class="etf-metric-val">$10 USD</div>
+          <div class="etf-metric-label">Inversión mínima</div>
+        </div>
+        <div class="etf-metric-item">
+          <div class="etf-metric-val">~11–14%</div>
+          <div class="etf-metric-label">Rendimiento anual histórico</div>
+        </div>
+        <div class="etf-metric-item">
+          <div class="etf-metric-val">0.65%</div>
+          <div class="etf-metric-label">Comisión de gestión</div>
+        </div>
+        <div class="etf-metric-item">
+          <div class="etf-metric-val">Alto</div>
+          <div class="etf-metric-label">Perfil de riesgo</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="etf-card family">
+      <div class="card-tag" style="background:rgba(255,255,255,0.2);color:#fff">ETF #2 · Familias</div>
+      <div class="etf-ticker">BTGPATRIMONIO</div>
+      <h3>BTG Patrimonio ETF</h3>
+      <div class="etf-subtitle">Para familias con metas de mediano y largo plazo (30-55 años)</div>
+      <div class="etf-feature"><div class="etf-feature-dot"></div><span><strong>Composición:</strong> 40% bonos soberanos y corporativos de grado inversión (USD), 35% acciones de dividendos estables (real estate, utilities, consumo), 25% fondos indexados de mercados desarrollados</span></div>
+      <div class="etf-feature"><div class="etf-feature-dot"></div><span><strong>Inversión mínima:</strong> $100 USD — con aportes periódicos programados</span></div>
+      <div class="etf-feature"><div class="etf-feature-dot"></div><span><strong>Metas automatizadas:</strong> Fondos "Educación 2032", "Casa propia", "Retiro 2045" con glide-path IA</span></div>
+      <div class="etf-feature"><div class="etf-feature-dot"></div><span><strong>Asesoría híbrida:</strong> BTG Copilot IA + Wealth Advisor humano para patrimonios &gt; $50,000 USD</span></div>
+      <div class="etf-feature"><div class="etf-feature-dot"></div><span><strong>Beneficio fiscal:</strong> Estructura bajo custodio panameño con protección patrimonial legal</span></div>
+      <div class="etf-metrics">
+        <div class="etf-metric-item">
+          <div class="etf-metric-val">$100 USD</div>
+          <div class="etf-metric-label">Inversión mínima</div>
+        </div>
+        <div class="etf-metric-item">
+          <div class="etf-metric-val">~7–9%</div>
+          <div class="etf-metric-label">Rendimiento anual histórico</div>
+        </div>
+        <div class="etf-metric-item">
+          <div class="etf-metric-val">0.80%</div>
+          <div class="etf-metric-label">Comisión de gestión</div>
+        </div>
+        <div class="etf-metric-item">
+          <div class="etf-metric-val">Moderado</div>
+          <div class="etf-metric-label">Perfil de riesgo</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">Lanzamiento y crecimiento de los ETFs</div>
+  <div class="card-grid card-grid-3">
+    <div class="card">
+      <h3>🚀 Fase de Lanzamiento (Mes 1-6)</h3>
+      <ul>
+        <li>Capital semilla BTG Pactual: <strong>$3.5M USD</strong> como fondo inicial de los ETFs</li>
+        <li>Apertura de cuentas en Panamá (custodio regulado SBP)</li>
+        <li>Campaña de adopción digital: meta 15,000 inversores en el primer semestre</li>
+      </ul>
+    </div>
+    <div class="card gold">
+      <h3>📈 Fase de Crecimiento (Mes 7-18)</h3>
+      <ul>
+        <li>Meta: <strong>$80M USD en AUM</strong> combinados entre los dos ETFs</li>
+        <li>Expansión a Costa Rica vía integración con SINPE Móvil</li>
+        <li>Alianzas con empleadores para depósito directo de nómina en el ETF</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>💹 Fase de Consolidación (Mes 19-36)</h3>
+      <ul>
+        <li>AUM proyectado: <strong>$250M USD</strong> al cierre del Año 3</li>
+        <li>Ingreso por comisiones de gestión: <strong>$1.75M/año</strong></li>
+        <li>BTG Nexus figura como referente de democratización de inversiones en CA</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>BTG Nexus · Propuesta Estratégica Centroamérica 2027 · Confidencial</span>
+    <span>Generación BTG & TECH 2027-1</span>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE 4: BTG BUSINESS CREDIT – VENTA DE CARTERA              -->
+<!-- ============================================================ -->
+<div class="page inner-page">
+  <div class="page-header">
+    <div class="page-header-left">
+      <div class="page-number">03 · Portafolio – Empresas</div>
+      <div class="page-section-title">BTG Business Credit: <span>Venta de Cartera</span></div>
+    </div>
+    <div class="page-logo-mini">BTG<span>Nexus</span></div>
+  </div>
+
+  <div class="highlight-box">
+    <h3>¿Qué es la Venta de Cartera?</h3>
+    <p>BTG Nexus origina y evalúa créditos para empresas centroamericanas. Luego <strong style="color:#e8b84b">vende o cede ese portafolio de deuda</strong> a BTG Pactual Global (o a fondos institucionales), liberando capital para seguir prestando. Es el modelo de banca de inversión aplicado a empresas de la región: BTG actúa como originador y estructurador, generando ingresos por comisiones y spread sin inmovilizar todo el capital.</p>
+  </div>
+
+  <div class="card-grid card-grid-2" style="margin-bottom:18px">
+    <div class="portfolio-card">
+      <div class="card-tag" style="background:var(--btg-gold);color:#0a1628">Producto 1</div>
+      <h3>Factoring Express</h3>
+      <p style="color:rgba(255,255,255,0.85);font-size:10.5px">La empresa sube su factura electrónica a la plataforma BTG Nexus. En menos de 2 horas, BTG le adelanta el 90% del valor de la factura, descontando una comisión del 1.5%-2.5% según plazo y riesgo del deudor. BTG cobra la factura al vencimiento directamente al cliente corporativo.</p>
+      <div style="margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <div style="background:rgba(255,255,255,0.1);padding:8px;border-radius:6px">
+          <div style="font-size:14px;font-weight:800;color:#e8b84b">2 hrs</div>
+          <div style="font-size:8.5px;color:rgba(255,255,255,0.6)">Dispersión fondos</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.1);padding:8px;border-radius:6px">
+          <div style="font-size:14px;font-weight:800;color:#e8b84b">1.5-2.5%</div>
+          <div style="font-size:8.5px;color:rgba(255,255,255,0.6)">Comisión por factura</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="card-tag" style="background:var(--btg-gold);color:#0a1628">Producto 2</div>
+      <h3>Línea de Crédito Revolvente IA</h3>
+      <p style="color:rgba(255,255,255,0.85);font-size:10.5px">Líneas de crédito de capital de trabajo para PyMEs y corporativos medianos. El motor de IA analiza flujos de caja, facturación electrónica y comportamiento bancario para aprobar en menos de 10 minutos. El cupo varía dinámicamente según el desempeño de la empresa cada trimestre.</p>
+      <div style="margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <div style="background:rgba(255,255,255,0.1);padding:8px;border-radius:6px">
+          <div style="font-size:14px;font-weight:800;color:#e8b84b">$5K–$500K</div>
+          <div style="font-size:8.5px;color:rgba(255,255,255,0.6)">Rango de cupos</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.1);padding:8px;border-radius:6px">
+          <div style="font-size:14px;font-weight:800;color:#e8b84b">10 min</div>
+          <div style="font-size:8.5px;color:rgba(255,255,255,0.6)">Aprobación IA</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">Mecanismo de Venta de Cartera (Securitización)</div>
+  <h3 style="margin-bottom:10px">¿Cómo libera capital BTG Nexus para seguir creciendo?</h3>
+
+  <div class="flow-row">
+    <div class="flow-box">🏢 Empresa pide crédito<br><span style="font-size:8px;color:#6b7a90">PyME o corporativo</span></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">🤖 IA evalúa en 10 min<br><span style="font-size:8px;color:#6b7a90">Credit scoring alternativo</span></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">💰 BTG desembolsa<br><span style="font-size:8px;color:#6b7a90">Crédito originado</span></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">📦 Empaqueta cartera<br><span style="font-size:8px;color:#6b7a90">Pool de créditos similares</span></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">🌍 Vende a fondo BTG Global<br><span style="font-size:8px;color:#6b7a90">Liberando capital fresco</span></div>
+  </div>
+
+  <div class="card-grid card-grid-3" style="margin-top:14px">
+    <div class="card">
+      <h3>💡 Beneficio para BTG Nexus</h3>
+      <ul>
+        <li>Recupera capital para originar más créditos</li>
+        <li>Gana la comisión de originación (1%-2.5%)</li>
+        <li>Mantiene el riesgo acotado en el balance</li>
+        <li>Escalabilidad sin necesidad de más capital propio</li>
+      </ul>
+    </div>
+    <div class="card gold">
+      <h3>💡 Beneficio para el Comprador (BTG Global / Fondos)</h3>
+      <ul>
+        <li>Accede a cartera diversificada de CA con rendimiento 8%-12%</li>
+        <li>Monitoreo en tiempo real del portafolio vía dashboard IA</li>
+        <li>Subyacente respaldado con facturación electrónica verificada</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>💡 Beneficio para la Empresa</h3>
+      <ul>
+        <li>Liquidez inmediata sin trámites bancarios lentos</li>
+        <li>Sin garantías hipotecarias requeridas (scoring alternativo)</li>
+        <li>Tasa competitiva vs banca tradicional: hasta -30%</li>
+        <li>Cupo que crece con el desempeño de la empresa</li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="margin-top:14px;background:#f0f9ff;border-left:4px solid #0d2444;border-radius:6px;padding:12px 16px">
+    <h3 style="color:#0d2444;margin-bottom:4px">📌 Meta de Cartera Empresarial al Año 3</h3>
+    <p style="margin:0;font-size:10px">Cartera total originada: <strong>$18M USD</strong> · Cartera vendida/cedida a fondos BTG Global: <strong>$12M USD</strong> · Ingresos por comisiones de originación y estructuración: <strong>~$1.8M/año</strong> · Mora proyectada: <strong>&lt; 2.5%</strong> (vs 4.5% mercado local)</p>
+  </div>
+
+  <div class="page-footer">
+    <span>BTG Nexus · Propuesta Estratégica Centroamérica 2027 · Confidencial</span>
+    <span>Generación BTG & TECH 2027-1</span>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE 5: TECNOLOGÍA E IA                                      -->
+<!-- ============================================================ -->
+<div class="page inner-page">
+  <div class="page-header">
+    <div class="page-header-left">
+      <div class="page-number">04 · Tecnología & IA</div>
+      <div class="page-section-title">Inteligencia Artificial como <span>Ventaja Competitiva</span></div>
+    </div>
+    <div class="page-logo-mini">BTG<span>Nexus</span></div>
+  </div>
+
+  <p style="margin-bottom:16px">La IA no es un accesorio en BTG Nexus: <strong>es la razón por la que podemos operar más barato, con menos mora y mejor experiencia que cualquier banco tradicional de la región.</strong> Cuatro motores de IA, cada uno con impacto directo en el P&L.</p>
+
+  <div class="card-grid card-grid-2" style="margin-bottom:16px">
+    <div class="card">
+      <div class="card-tag">Motor IA #1</div>
+      <h3>🧮 Credit Scoring Alternativo</h3>
+      <p><strong>Problema:</strong> El 55% de los jóvenes y el 60% de las PyMEs no tienen historial crediticio bancario en CA.</p>
+      <p><strong>Solución:</strong> Modelo de Machine Learning (XGBoost + SHAP) que analiza facturación electrónica, flujos de caja y comportamiento digital para asignar un score en tiempo real.</p>
+      <p><strong>Resultado:</strong> Costo por originación de crédito: <strong>$120 USD → $2 USD</strong>. Aprobación en &lt; 10 minutos. Mora controlada: <strong>2.1% vs 4.5%</strong> del mercado.</p>
+    </div>
+    <div class="card gold">
+      <div class="card-tag">Motor IA #2</div>
+      <h3>🛡️ Detección de Fraude y AML</h3>
+      <p><strong>Problema:</strong> Centroamérica es región de alta alerta GAFI. Un incidente de fraude o lavado puede revocar la licencia bancaria.</p>
+      <p><strong>Solución:</strong> Graph Neural Networks (GNNs) que analizan redes de transacciones en menos de 45 milisegundos, detectando patrones de estructuración y "pitufeo" que las reglas manuales no capturan.</p>
+      <p><strong>Resultado:</strong> Reducción del <strong>82% en falsos positivos</strong>. Pérdidas por fraude: <strong>&lt; 0.015%</strong> del volumen.</p>
+    </div>
+    <div class="card">
+      <div class="card-tag">Motor IA #3</div>
+      <h3>🤖 BTG Copilot (IA Conversacional)</h3>
+      <p><strong>Problema:</strong> Los asesores financieros humanos son costosos y solo accesibles para clientes de alto patrimonio.</p>
+      <p><strong>Solución:</strong> Modelo de lenguaje generativo (RAG sobre base de conocimiento de BTG Pactual) que asesora en lenguaje natural por WhatsApp y la app, dentro de los límites del perfil de riesgo del cliente.</p>
+      <p><strong>Resultado:</strong> <strong>80% de las consultas</strong> resueltas sin humano. Costo de atención reducido en un <strong>80%</strong>. NPS: <strong>+72 puntos</strong>.</p>
+    </div>
+    <div class="card gold">
+      <div class="card-tag">Motor IA #4</div>
+      <h3>📊 Gestión Dinámica de Liquidez ETF</h3>
+      <p><strong>Problema:</strong> Los ETFs necesitan rebalanceo constante para mantener su composición objetivo sin incurrir en costos de transacción excesivos.</p>
+      <p><strong>Solución:</strong> Algoritmo de optimización cuantitativa (Mean-Variance + Reinforcement Learning) que detecta desviaciones y ejecuta rebalanceos automáticos con mínimo impacto de mercado.</p>
+      <p><strong>Resultado:</strong> Tracking error del ETF: <strong>&lt; 0.3%</strong>. Costo de rebalanceo: <strong>60% menor</strong> que gestión manual.</p>
+    </div>
+  </div>
+
+  <div class="section-label">Stack Tecnológico</div>
+  <div class="card-grid card-grid-3">
+    <div class="card" style="padding:12px">
+      <h3 style="font-size:10px;margin-bottom:6px">☁️ Infraestructura Cloud</h3>
+      <ul style="font-size:9.5px">
+        <li>AWS Multi-AZ (Panamá + Miami)</li>
+        <li>Kubernetes + Docker containers</li>
+        <li>99.98% uptime garantizado</li>
+        <li>PCI-DSS Level 1 / SOC2 Type II</li>
+      </ul>
+    </div>
+    <div class="card" style="padding:12px">
+      <h3 style="font-size:10px;margin-bottom:6px">📡 Datos en Tiempo Real</h3>
+      <ul style="font-size:9.5px">
+        <li>Apache Kafka (streaming eventos)</li>
+        <li>Databricks Delta Lake</li>
+        <li>Feast Feature Store (Redis &lt;10ms)</li>
+        <li>MLflow + Kubeflow (MLOps)</li>
+      </ul>
+    </div>
+    <div class="card" style="padding:12px">
+      <h3 style="font-size:10px;margin-bottom:6px">🔐 Seguridad y Compliance</h3>
+      <ul style="font-size:9.5px">
+        <li>Zero-Trust Architecture</li>
+        <li>HSM (Hardware Security Modules)</li>
+        <li>Biometría facial KYC (Jumio/Trulioo)</li>
+        <li>Evidently AI (monitoreo de drift)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>BTG Nexus · Propuesta Estratégica Centroamérica 2027 · Confidencial</span>
+    <span>Generación BTG & TECH 2027-1</span>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE 6: PRESUPUESTO + RENTABILIDAD                           -->
+<!-- ============================================================ -->
+<div class="page inner-page">
+  <div class="page-header">
+    <div class="page-header-left">
+      <div class="page-number">05 · Presupuesto & Rentabilidad</div>
+      <div class="page-section-title">Distribución del Capital y <span>Modelo de Ingresos</span></div>
+    </div>
+    <div class="page-logo-mini">BTG<span>Nexus</span></div>
+  </div>
+
+  <div class="section-label">Presupuesto Total: $25,000,000 USD</div>
+  <table class="budget-table">
+    <thead>
+      <tr>
+        <th>Componente</th>
+        <th>Monto (USD)</th>
+        <th>%</th>
+        <th>Distribución Visual</th>
+        <th>Justificación Estratégica</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>🤖 Tecnología, Cloud & IA</strong></td>
+        <td><strong>$8,500,000</strong></td>
+        <td>34%</td>
+        <td>
+          <div class="pct-bar">
+            <div class="pct-track"><div class="pct-fill" style="width:34%"></div></div>
+            <span>34%</span>
+          </div>
+        </td>
+        <td>Core bancario, data lakehouse, 4 motores de IA, ciberseguridad y MLOps</td>
+      </tr>
+      <tr>
+        <td><strong>📦 Capital Semilla ETFs</strong></td>
+        <td><strong>$3,500,000</strong></td>
+        <td>14%</td>
+        <td>
+          <div class="pct-bar">
+            <div class="pct-track"><div class="pct-fill gold" style="width:14%"></div></div>
+            <span>14%</span>
+          </div>
+        </td>
+        <td>Fondo inicial para lanzar BTGPULSE y BTGPATRIMONIO con liquidez suficiente</td>
+      </tr>
+      <tr>
+        <td><strong>🏢 Cartera de Crédito Empresarial</strong></td>
+        <td><strong>$4,000,000</strong></td>
+        <td>16%</td>
+        <td>
+          <div class="pct-bar">
+            <div class="pct-track"><div class="pct-fill teal" style="width:16%"></div></div>
+            <span>16%</span>
+          </div>
+        </td>
+        <td>Capital para originar la cartera de factoring y crédito revolvente PyME</td>
+      </tr>
+      <tr>
+        <td><strong>📣 Marketing & Go-to-Market</strong></td>
+        <td><strong>$3,500,000</strong></td>
+        <td>14%</td>
+        <td>
+          <div class="pct-bar">
+            <div class="pct-track"><div class="pct-fill purple" style="width:14%"></div></div>
+            <span>14%</span>
+          </div>
+        </td>
+        <td>Adquisición digital, alianzas B2B, branding regional y canal universitario</td>
+      </tr>
+      <tr>
+        <td><strong>👥 Talento & Equipo Estratégico</strong></td>
+        <td><strong>$2,500,000</strong></td>
+        <td>10%</td>
+        <td>
+          <div class="pct-bar">
+            <div class="pct-track"><div class="pct-fill green" style="width:10%"></div></div>
+            <span>10%</span>
+          </div>
+        </td>
+        <td>Liderazgo senior, data science pods y programa BTG Tech Pioneers</td>
+      </tr>
+      <tr>
+        <td><strong>🏛️ Licencia, Legal & Regulatorio</strong></td>
+        <td><strong>$1,500,000</strong></td>
+        <td>6%</td>
+        <td>
+          <div class="pct-bar">
+            <div class="pct-track"><div class="pct-fill red" style="width:6%"></div></div>
+            <span>6%</span>
+          </div>
+        </td>
+        <td>Licencia SBP Panamá, KYC/AML RegTech, asesoría legal y auditorías Big 4</td>
+      </tr>
+      <tr>
+        <td><strong>🛡️ Reserva y Contingencia</strong></td>
+        <td><strong>$1,500,000</strong></td>
+        <td>6%</td>
+        <td>
+          <div class="pct-bar">
+            <div class="pct-track"><div class="pct-fill" style="width:6%;background:#94a3b8"></div></div>
+            <span>6%</span>
+          </div>
+        </td>
+        <td>Buffer para encajes regulatorios, provisiones de cartera y contingencias macro</td>
+      </tr>
+      <tr class="total-row">
+        <td><strong>TOTAL</strong></td>
+        <td><strong>$25,000,000</strong></td>
+        <td><strong>100%</strong></td>
+        <td></td>
+        <td>Dentro del límite máximo asignado</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="section-label">Fuentes de Ingresos y Proyección Financiera</div>
+  <div class="card-grid card-grid-2" style="margin-bottom:14px">
+    <div class="card">
+      <h3>💰 Cinco Fuentes de Ingreso</h3>
+      <ul>
+        <li><strong>Comisiones AUM (ETFs):</strong> 0.65%–0.80% anual sobre activos bajo gestión</li>
+        <li><strong>Spread de factoring:</strong> 1.5%–2.5% por factura descontada</li>
+        <li><strong>Comisión de originación cartera:</strong> 1%–2.5% por portafolio estructurado y vendido</li>
+        <li><strong>Intercambio de tarjeta (Interchange):</strong> 1.2% por transacción con tarjeta BTG Nexus</li>
+        <li><strong>Suscripción BTG Business Pro:</strong> $49–$149 USD/mes para empresas (nómina, tesorería)</li>
+      </ul>
+    </div>
+    <div class="card navy">
+      <h3>📊 Proyección P&L Simplificada</h3>
+      <ul>
+        <li>Año 1 — Ingresos: <strong>$2.8M</strong> · EBITDA: <strong>–$5.2M</strong> (inversión)</li>
+        <li>Año 2 — Ingresos: <strong>$10.5M</strong> · EBITDA: <strong>+$1.2M</strong></li>
+        <li>Año 3 — Ingresos: <strong>$28.4M</strong> · EBITDA: <strong>+$13.8M</strong></li>
+        <li><strong>Break-Even operativo:</strong> Mes 22</li>
+        <li><strong>TIR a 5 años:</strong> 38.5%</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-year">Año 1 · 2027</div>
+      <div class="timeline-amount">$11.5M</div>
+      <div class="timeline-desc">Heavy CAPEX: Licencia SBP, plataforma tech, lanzamiento de ETFs y primeros créditos empresariales en Panamá. CAC foco: Jóvenes y empresas semilla.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">Año 2 · 2028</div>
+      <div class="timeline-amount">$8.5M</div>
+      <div class="timeline-desc">Expansión a Costa Rica. Aceleración AUM ETFs. Venta del primer paquete de cartera empresarial ($4M) a fondo BTG Global. Break-Even mes 22.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">Año 3 · 2029</div>
+      <div class="timeline-amount">$5M</div>
+      <div class="timeline-desc">Consolidación. 260,000 usuarios activos, $250M AUM ETFs, $18M cartera PyME. Operación autosustentable. Expansión Guatemala/El Salvador.</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>BTG Nexus · Propuesta Estratégica Centroamérica 2027 · Confidencial</span>
+    <span>Generación BTG & TECH 2027-1</span>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE 7: TALENTO + RIESGOS                                    -->
+<!-- ============================================================ -->
+<div class="page inner-page">
+  <div class="page-header">
+    <div class="page-header-left">
+      <div class="page-number">06 · Talento & Riesgos</div>
+      <div class="page-section-title">Capital Humano y <span>Gestión de Riesgos</span></div>
+    </div>
+    <div class="page-logo-mini">BTG<span>Nexus</span></div>
+  </div>
+
+  <div class="section-label">Talento – Programa BTG Tech Pioneers</div>
+  <p style="margin-bottom:12px">BTG Nexus posiciona al banco como <strong>el empleador más atractivo para talento joven de tecnología y finanzas en Centroamérica</strong>, compitiendo con Google, Amazon y las fintechs globales.</p>
+
+  <div class="card-grid card-grid-3" style="margin-bottom:16px">
+    <div class="card gold">
+      <div class="card-icon">🏆</div>
+      <h3>BTG Datathon CA</h3>
+      <p>Competencia anual de Data Science con casos reales de BTG (scoring, fraude). Los 15 mejores finalistas reciben oferta directa de contratación sin entrevista adicional.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔄</div>
+      <h3>Programa de Rotación</h3>
+      <p>Rotación de 4 meses por 3 áreas: Mesa de Inversión (ETFs), Laboratorio de IA, y Producto Digital. Mentores Partner de BTG Pactual asignados desde el día 1.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📜</div>
+      <h3>Certifs. Internacionales</h3>
+      <p>Financiamiento 100% de CFA, FRM, AWS ML Specialty y Azure Solutions Architect. Modelo de partnership con phantom shares para los mejores perfiles del equipo tech.</p>
+    </div>
+  </div>
+
+  <div class="card-grid card-grid-2" style="margin-bottom:18px">
+    <div class="card">
+      <h3>👥 Estructura del Equipo Fundador</h3>
+      <ul>
+        <li><strong>Country Manager Centroamérica</strong> – Red regulatoria local SBP</li>
+        <li><strong>CTO & Head de IA/Data Science</strong> – Arquitectura tech y modelos</li>
+        <li><strong>Chief Risk & Compliance Officer</strong> – Normativa GAFI y SBP</li>
+        <li><strong>Head of Product & UX</strong> – ETFs y experiencia digital</li>
+        <li><strong>4 Data Scientists</strong> (Risk, Fraud, NLP, Quant)</li>
+        <li><strong>8 Ingenieros</strong> (Backend, Mobile, DevSecOps, Cloud)</li>
+      </ul>
+    </div>
+    <div class="card navy">
+      <h3>🎯 Propuesta de Valor al Talento Joven</h3>
+      <ul>
+        <li>Oficinas modernas en Panamá y Costa Rica (híbrido 3+2)</li>
+        <li>Salarios top decil de mercado + phantom shares vinculadas a AUM</li>
+        <li>Impacto real: tu código mueve millones de dólares en inversiones desde el día 1</li>
+        <li>Acceso al ecosistema global de BTG Pactual (Brasil, Chile, Colombia, México)</li>
+        <li>Rotación hacia la mesa global de BTG como carrera de largo plazo</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section-label">Riesgos Principales y Mitigación</div>
+  <table class="risk-table">
+    <thead>
+      <tr>
+        <th>Riesgo</th>
+        <th>Impacto</th>
+        <th>Probabilidad</th>
+        <th>Estrategia de Mitigación</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Regulatorio / AML</strong><br><span style="font-size:9px;color:#6b7a90">Incumplimiento normativa SBP o GAFI</span></td>
+        <td><span class="risk-badge risk-alto">Muy Alto</span></td>
+        <td><span class="risk-badge risk-medio">Medio</span></td>
+        <td>GNN para AML en tiempo real, Oficial de Cumplimiento independiente, herramientas RegTech (Dow Jones, OFAC). Presupuesto reservado: $1.5M.</td>
+      </tr>
+      <tr>
+        <td><strong>Crédito / Mora Alta</strong><br><span style="font-size:9px;color:#6b7a90">Aumento imprevisto de cartera vencida</span></td>
+        <td><span class="risk-badge risk-alto">Alto</span></td>
+        <td><span class="risk-badge risk-medio">Medio</span></td>
+        <td>Límites de exposición escalonados, scoring con SHAP explicable, reglas duras de DSCR, buffer de provisión de $1M. Meta mora: &lt; 2.5%.</td>
+      </tr>
+      <tr>
+        <td><strong>Ciberseguridad / Fuga de Datos</strong><br><span style="font-size:9px;color:#6b7a90">Ataque ransomware o robo de identidades</span></td>
+        <td><span class="risk-badge risk-alto">Muy Alto</span></td>
+        <td><span class="risk-badge risk-bajo">Baja</span></td>
+        <td>Zero-Trust Architecture, HSMs, Passkeys biométricos, Red Team mensual, Bug Bounty program. Certificación PCI-DSS Nivel 1.</td>
+      </tr>
+      <tr>
+        <td><strong>Modelo / Sesgo IA</strong><br><span style="font-size:9px;color:#6b7a90">Discriminación crediticia o drift del modelo</span></td>
+        <td><span class="risk-badge risk-medio">Medio</span></td>
+        <td><span class="risk-badge risk-bajo">Baja</span></td>
+        <td>Monitoreo continuo con Evidently AI, auditoría de Fair Lending semestral, métricas de paridad demográfica (Equalized Odds).</td>
+      </tr>
+      <tr>
+        <td><strong>Cambiario / Macro</strong><br><span style="font-size:9px;color:#6b7a90">Devaluación de Colón o Quetzal</span></td>
+        <td><span class="risk-badge risk-medio">Medio</span></td>
+        <td><span class="risk-badge risk-medio">Medio</span></td>
+        <td>Operación central en USD (dolarización Panamá/El Salvador). FX Forwards y Swaps para operaciones en CR y Guatemala gestionados por mesa de dinero BTG.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="highlight-box" style="margin-top:0">
+    <h3>💬 Cierre para los Inversionistas</h3>
+    <p>BTG Nexus no es un experimento digital. Es la extensión natural del mayor banco de inversión de América Latina hacia 50 millones de personas que hoy no tienen acceso a inversiones de calidad ni crédito justo. Con $25 millones, tecnología de punta, dos ETFs propios y un modelo de venta de cartera que libera capital continuamente, generamos rentabilidad en el mes 22 y posicionamos a BTG Pactual como el banco de la generación tecnológica de Centroamérica.</p>
+  </div>
+
+  <div class="page-footer">
+    <span>BTG Nexus · Propuesta Estratégica Centroamérica 2027 · Confidencial</span>
+    <span>Generación BTG & TECH 2027-1</span>
+  </div>
+</div>
+
+</body>
+</html>
