@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>BTG Nexus – Pilar Tecnología & IA</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap');
+
+    :root {
+      --navy: #0a1628;
+      --blue: #1a4a8a;
+      --gold: #c9a227;
+      --gold-light: #e8b84b;
+      --youth: #1e40af;
+      --youth-light: #3b82f6;
+      --family: #92400e;
+      --family-light: #d97706;
+      --biz: #065f46;
+      --biz-light: #059669;
+      --bg: #f8fafc;
+      --white: #ffffff;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      color: #0a1628;
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 0;
+      page-break-after: always;
+      position: relative;
+    }
+    .page:last-child { page-break-after: auto; }
+
+    @media print {
+      body { background: #fff; }
+      .page { margin: 0; }
+    }
+
+    /* ===== COVER ===== */
+    .cover {
+      background: linear-gradient(145deg, #0a1628 0%, #0d2444 55%, #1a3a70 100%);
+      color: white;
+      min-height: 297mm;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cover-top {
+      padding: 36px 48px 24px;
+      border-bottom: 1px solid rgba(201,162,39,0.25);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo { font-size: 20px; font-weight: 900; letter-spacing:-0.5px; }
+    .logo span { color: var(--gold-light); }
+    .badge {
+      border: 1px solid rgba(201,162,39,0.4);
+      background: rgba(201,162,39,0.1);
+      color: var(--gold-light);
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .cover-body {
+      flex: 1;
+      padding: 56px 48px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .cover-eyebrow {
+      color: var(--gold-light);
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .cover-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 46px;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+    .cover-sub {
+      font-size: 18px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 36px;
+    }
+    .cover-divider { width:55px; height:3px; background:linear-gradient(90deg,var(--gold-light),transparent); margin-bottom:28px; }
+    .cover-desc {
+      font-size: 12px;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.8;
+      max-width: 430px;
+      margin-bottom: 40px;
+    }
+
+    .cover-segments {
+      display: flex;
+      gap: 12px;
+    }
+    .seg-chip {
+      flex: 1;
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .seg-chip.youth { background: rgba(30,64,175,0.35); border: 1px solid rgba(59,130,246,0.3); }
+    .seg-chip.family { background: rgba(146,64,14,0.35); border: 1px solid rgba(217,119,6,0.3); }
+    .seg-chip.biz { background: rgba(6,95,70,0.35); border: 1px solid rgba(5,150,105,0.3); }
+    .seg-chip-icon { font-size: 22px; margin-bottom: 6px; }
+    .seg-chip-name { font-size: 10px; font-weight: 700; color: #fff; margin-bottom: 2px; }
+    .seg-chip-desc { font-size: 8.5px; color: rgba(255,255,255,0.65); }
+
+    .cover-footer {
+      padding: 24px 48px;
+      background: rgba(0,0,0,0.2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cover-footer-label { font-size: 8px; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 3px; }
+    .cover-footer-val { font-size: 12px; font-weight: 700; color: var(--gold-light); }
+
+    /* ===== INNER PAGES ===== */
+    .inner { padding: 30px 44px 50px; }
+
+    .pg-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: 2.5px solid var(--blue);
+      padding-bottom: 12px;
+      margin-bottom: 22px;
+    }
+    .pg-num { font-size: 8.5px; color: #8a9bb5; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 3px; }
+    .pg-title { font-size: 19px; font-weight: 800; }
+    .pg-title span { color: var(--blue); }
+    .logo-mini { font-size: 12px; font-weight: 900; color: var(--navy); }
+    .logo-mini span { color: var(--gold); }
+
+    /* Segment header band */
+    .seg-header {
+      border-radius: 10px;
+      padding: 14px 20px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .seg-header.youth { background: linear-gradient(135deg, #1e40af, #1a4a8a); }
+    .seg-header.family { background: linear-gradient(135deg, #92400e, #b45309); }
+    .seg-header.biz   { background: linear-gradient(135deg, #065f46, #047857); }
+
+    .seg-header-icon { font-size: 30px; }
+    .seg-header-content {}
+    .seg-header-tag {
+      font-size: 8.5px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 2px;
+    }
+    .seg-header-name { font-size: 17px; font-weight: 800; color: #fff; line-height: 1.1; }
+    .seg-header-sub { font-size: 10px; color: rgba(255,255,255,0.75); margin-top: 2px; }
+
+    /* AI use case cards */
+    .ai-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
+
+    .ai-card {
+      background: #f8fafc;
+      border-radius: 9px;
+      padding: 14px;
+      border-top: 3px solid var(--blue);
+    }
+    .ai-card.youth-card { border-top-color: var(--youth-light); }
+    .ai-card.family-card { border-top-color: var(--family-light); }
+    .ai-card.biz-card   { border-top-color: var(--biz-light); }
+
+    .ai-card-tag {
+      display: inline-block;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 3px;
+      margin-bottom: 7px;
+    }
+    .youth-tag { background: #dbeafe; color: #1e3a8a; }
+    .family-tag { background: #fef3c7; color: #78350f; }
+    .biz-tag    { background: #d1fae5; color: #064e3b; }
+
+    .ai-card h3 { font-size: 11px; font-weight: 700; color: #0a1628; margin-bottom: 5px; }
+    .ai-card .prob { font-size: 9.5px; color: #64748b; margin-bottom: 5px; line-height: 1.5; }
+    .ai-card .sol { font-size: 10px; color: #1e293b; line-height: 1.6; }
+    .ai-card .sol strong { color: #0a1628; }
+
+    .result-row {
+      background: #0a1628;
+      border-radius: 8px;
+      padding: 12px 16px;
+      display: flex;
+      gap: 8px;
+      align-items: stretch;
+      margin-bottom: 16px;
+    }
+    .result-item {
+      flex: 1;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.1);
+      padding-right: 8px;
+    }
+    .result-item:last-child { border-right: none; }
+    .result-val { font-size: 16px; font-weight: 900; color: var(--gold-light); margin-bottom: 2px; }
+    .result-label { font-size: 8px; color: rgba(255,255,255,0.55); text-transform: uppercase; letter-spacing: 0.8px; line-height: 1.3; }
+
+    /* Full-width AI card */
+    .ai-card-full {
+      background: #f8fafc;
+      border-radius: 9px;
+      padding: 14px;
+      border-top: 3px solid var(--biz-light);
+      margin-bottom: 12px;
+    }
+    .ai-card-full h3 { font-size: 11px; font-weight: 700; margin-bottom: 5px; }
+    .ai-card-full .sol { font-size: 10px; color: #1e293b; line-height: 1.6; }
+
+    /* Stack tech row */
+    .tech-stack {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .tech-item {
+      background: var(--navy);
+      border-radius: 7px;
+      padding: 10px 12px;
+    }
+    .tech-item h4 { font-size: 9.5px; font-weight: 700; color: var(--gold-light); margin-bottom: 4px; }
+    .tech-item ul { padding-left: 12px; }
+    .tech-item li { font-size: 9px; color: rgba(255,255,255,0.8); margin-bottom: 2px; }
+
+    /* Summary highlight */
+    .summary-box {
+      background: linear-gradient(90deg, #0a1628, #1a4a8a);
+      border-radius: 10px;
+      padding: 16px 20px;
+      color: #fff;
+    }
+    .summary-box h3 { font-size: 13px; font-weight: 700; color: var(--gold-light); margin-bottom: 6px; }
+    .summary-box p { font-size: 10.5px; color: rgba(255,255,255,0.88); line-height: 1.7; }
+
+    .pg-footer {
+      position: absolute;
+      bottom: 16px;
+      left: 44px;
+      right: 44px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 7.5px;
+      color: #b0bccc;
+      border-top: 1px solid #e4ecf5;
+      padding-top: 6px;
+    }
+
+    .spacer { height: 14px; }
+
+    /* Section label */
+    .slabel {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--blue);
+      color: #fff;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    /* Flow strip */
+    .flow {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .flow-box {
+      flex: 1;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 7px 10px;
+      font-size: 9px;
+      font-weight: 600;
+      color: #1e3a5f;
+      text-align: center;
+    }
+    .flow-arr { font-size: 12px; color: var(--blue); }
+  </style>
+</head>
+<body>
+
+<!-- ================================================ -->
+<!-- PAGE 1: COVER                                    -->
+<!-- ================================================ -->
+<div class="page cover">
+  <div class="cover-top">
+    <div class="logo">BTG<span>Nexus</span></div>
+    <div class="badge">Assessment Center · Generación BTG & TECH 2027-1</div>
+  </div>
+
+  <div class="cover-body">
+    <div class="cover-eyebrow">Pilar Estratégico · Tecnología</div>
+    <div class="cover-title">Uso Efectivo<br>y Concreto de<br>Inteligencia Artificial</div>
+    <div class="cover-sub">Tres segmentos. Una plataforma. IA en cada decisión.</div>
+    <div class="cover-divider"></div>
+    <div class="cover-desc">
+      En BTG Nexus la Inteligencia Artificial no es un adorno tecnológico: es el motor que permite operar a menor costo, con menor riesgo y con una experiencia hiperpersonalizada para cada tipo de cliente. Este documento detalla, de forma concreta, cómo aplica la IA en los tres segmentos estratégicos.
+    </div>
+
+    <div class="cover-segments">
+      <div class="seg-chip youth">
+        <div class="seg-chip-icon">👤</div>
+        <div class="seg-chip-name">Jóvenes</div>
+        <div class="seg-chip-desc">ETF Pulse · Asesoría IA<br>Inversión desde $10 USD</div>
+      </div>
+      <div class="seg-chip family">
+        <div class="seg-chip-icon">👨‍👩‍👧</div>
+        <div class="seg-chip-name">Familias</div>
+        <div class="seg-chip-desc">ETF Patrimonio · Metas<br>Planificación automatizada</div>
+      </div>
+      <div class="seg-chip biz">
+        <div class="seg-chip-icon">🏢</div>
+        <div class="seg-chip-name">Empresas</div>
+        <div class="seg-chip-desc">Crédito · Factoring<br>Venta de cartera IA</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cover-footer">
+    <div>
+      <div class="cover-footer-label">Propuesta</div>
+      <div class="cover-footer-val">BTG Nexus – Expansión Centroamérica</div>
+    </div>
+    <div>
+      <div class="cover-footer-label">Pilar evaluado</div>
+      <div class="cover-footer-val">Tecnología e IA</div>
+    </div>
+    <div>
+      <div class="cover-footer-label">Año</div>
+      <div class="cover-footer-val">2027 – 2029</div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================ -->
+<!-- PAGE 2: JÓVENES                                  -->
+<!-- ================================================ -->
+<div class="page inner">
+  <div class="pg-header">
+    <div>
+      <div class="pg-num">Segmento 01 · Jóvenes (18-35 años)</div>
+      <div class="pg-title">IA para <span>Jóvenes Inversores</span></div>
+    </div>
+    <div class="logo-mini">BTG<span>Nexus</span></div>
+  </div>
+
+  <div class="seg-header youth">
+    <div class="seg-header-icon">👤</div>
+    <div class="seg-header-content">
+      <div class="seg-header-tag">Segmento 1 de 3 · Jóvenes</div>
+      <div class="seg-header-name">BTG Pulse ETF — Inversión inteligente desde $10 USD</div>
+      <div class="seg-header-sub">Profesionales jóvenes, trabajadores remotos y estudiantes universitarios de Centroamérica</div>
+    </div>
+  </div>
+
+  <div class="slabel">Usos concretos de IA para este segmento</div>
+
+  <div class="ai-grid">
+    <div class="ai-card youth-card">
+      <div class="ai-card-tag youth-tag">IA Aplicada #1</div>
+      <h3>🤖 BTG Copilot — Asesor Financiero Conversacional</h3>
+      <div class="prob">❓ <em>Problema:</em> El joven no sabe cómo empezar a invertir ni entiende los productos financieros. Un asesor humano cuesta $150/hora y no es viable para patrimonios pequeños.</div>
+      <div class="sol">
+        ✅ <strong>Solución concreta:</strong> Un modelo de lenguaje generativo (LLM) con arquitectura <strong>RAG (Retrieval-Augmented Generation)</strong>, entrenado con los fondos y documentos de BTG Pactual, responde en lenguaje natural por WhatsApp y la App.<br><br>
+        El usuario pregunta: <em>"¿Cuánto necesito ahorrar para tener $20,000 en 5 años?"</em> y la IA responde con un plan de ahorro concreto, sugiere el <strong>ETF Pulse</strong> según su perfil de riesgo y programa aportes automáticos.
+      </div>
+    </div>
+
+    <div class="ai-card youth-card">
+      <div class="ai-card-tag youth-tag">IA Aplicada #2</div>
+      <h3>📊 Rebalanceo Automático del ETF (Quant IA)</h3>
+      <div class="prob">❓ <em>Problema:</em> Un ETF necesita ajustarse constantemente para mantener su composición objetivo (S&P 500 Tech, Latam, ETF cripto). Hacerlo manualmente es costoso e ineficiente.</div>
+      <div class="sol">
+        ✅ <strong>Solución concreta:</strong> Algoritmo de optimización cuantitativa <strong>Mean-Variance + Reinforcement Learning</strong> que monitorea en tiempo real la desviación del portafolio respecto al benchmark. Cuando detecta una desviación mayor al 1.5%, ejecuta automáticamente las órdenes de rebalanceo con <strong>mínimo impacto de mercado (TWAP/VWAP)</strong>.<br><br>
+        Sin intervención humana. Sin costo extra para el usuario.
+      </div>
+    </div>
+
+    <div class="ai-card youth-card">
+      <div class="ai-card-tag youth-tag">IA Aplicada #3</div>
+      <h3>🪙 Redondeo Inteligente y Cashback Reinvertido</h3>
+      <div class="prob">❓ <em>Problema:</em> Los jóvenes tienen dificultad para ahorrar de forma disciplinada. El cashback en puntos no genera riqueza real.</div>
+      <div class="sol">
+        ✅ <strong>Solución concreta:</strong> Motor de <strong>micro-decisiones automáticas (reglas + ML)</strong>: cada compra con tarjeta BTG Pulse se redondea al dólar más cercano y la diferencia se invierte automáticamente en el ETF Pulse.<br><br>
+        Además, el 1.5% de cashback <strong>se acredita directamente en participaciones del ETF</strong>, no en puntos inútiles. El ML detecta patrones de gasto y sugiere momentos óptimos para aportes adicionales.
+      </div>
+    </div>
+
+    <div class="ai-card youth-card">
+      <div class="ai-card-tag youth-tag">IA Aplicada #4</div>
+      <h3>🛡️ Detección de Fraude en Tiempo Real</h3>
+      <div class="prob">❓ <em>Problema:</em> Los jóvenes son el segmento más vulnerable al phishing, clonación de tarjeta y fraude de identidad digital.</div>
+      <div class="sol">
+        ✅ <strong>Solución concreta:</strong> Sistema de <strong>Graph Neural Networks (GNN)</strong> que analiza el grafo de relaciones entre dispositivo, ubicación, red Wi-Fi, patrón de escritura y hora de la transacción. Si la transacción es inusual, la bloquea y notifica en <strong>menos de 45 milisegundos</strong> antes de que se apruebe el cargo.
+      </div>
+    </div>
+  </div>
+
+  <div class="result-row">
+    <div class="result-item">
+      <div class="result-val">$10 USD</div>
+      <div class="result-label">Inversión mínima en el ETF Pulse</div>
+    </div>
+    <div class="result-item">
+      <div class="result-val">80%</div>
+      <div class="result-label">Consultas resueltas por IA sin humano</div>
+    </div>
+    <div class="result-item">
+      <div class="result-val">&lt;45ms</div>
+      <div class="result-label">Detección de fraude en tiempo real</div>
+    </div>
+    <div class="result-item">
+      <div class="result-val">2.4x</div>
+      <div class="result-label">Aumento promedio de saldo inversor al año 1</div>
+    </div>
+  </div>
+
+  <div class="slabel">Flujo de experiencia con IA — Jóvenes</div>
+  <div class="flow">
+    <div class="flow-box">📱 Descarga la App<br><span style="font-size:8px;font-weight:400;color:#64748b">KYC biométrico 3 min</span></div>
+    <div class="flow-arr">→</div>
+    <div class="flow-box">🤖 Copilot pregunta<br><span style="font-size:8px;font-weight:400;color:#64748b">¿Qué meta tienes?</span></div>
+    <div class="flow-arr">→</div>
+    <div class="flow-box">📊 IA perfila el riesgo<br><span style="font-size:8px;font-weight:400;color:#64748b">Test de idoneidad IA</span></div>
+    <div class="flow-arr">→</div>
+    <div class="flow-box">💰 Invierte $10 en ETF<br><span style="font-size:8px;font-weight:400;color:#64748b">Rebalanceo auto</span></div>
+    <div class="flow-arr">→</div>
+    <div class="flow-box">🔄 Redondeo + cashback<br><span style="font-size:8px;font-weight:400;color:#64748b">Crece sin esfuerzo</span></div>
+  </div>
+
+  <div class="pg-footer">
+    <span>BTG Nexus · Pilar Tecnología & IA · Segmento Jóvenes</span>
+    <span>Generación BTG & TECH 2027-1</span>
+  </div>
+</div>
+
+<!-- ================================================ -->
+<!-- PAGE 3: FAMILIAS                                 -->
+<!-- ================================================ -->
+<div class="page inner">
+  <div class="pg-header">
+    <div>
+      <div class="pg-num">Segmento 02 · Familias (30-55 años)</div>
+      <div class="pg-title">IA para <span>Familias y Patrimonio</span></div>
+    </div>
+    <div class="logo-mini">BTG<span>Nexus</span></div>
+  </div>
+
+  <div class="seg-header family">
+    <div class="seg-header-icon">👨‍👩‍👧</div>
+    <div class="seg-header-content">
+      <div class="seg-header-tag">Segmento 2 de 3 · Familias</div>
+      <div class="seg-header-name">BTG Patrimonio ETF — Metas de largo plazo, custodia en USD</div>
+      <div class="seg-header-sub">Familias de clase media y media-alta que planifican educación universitaria, vivienda y retiro</div>
+    </div>
+  </div>
+
+  <div class="slabel">Usos concretos de IA para este segmento</div>
+
+  <div class="ai-grid">
+    <div class="ai-card family-card">
+      <div class="ai-card-tag family-tag">IA Aplicada #1</div>
+      <h3>🎯 Goal-Based Investing con Glide-Path Automático</h3>
+      <div class="prob">❓ <em>Problema:</em> Una familia que ahorra para la universidad de su hijo en 10 años no puede mantener el mismo nivel de riesgo que alguien con 30 años de horizonte. Ajustar eso manualmente es complejo y costoso.</div>
+      <div class="sol">
+        ✅ <strong>Solución concreta:</strong> Algoritmo de <strong>glide-path dinámico (reducción automática de riesgo)</strong>: el ETF Patrimonio ajusta progresivamente la composición del portafolio a medida que la meta se acerca. Si la meta es 2032, el algoritmo aumenta el peso de bonos de grado inversión y reduce acciones volátiles desde 2028, automáticamente y sin que la familia tenga que hacer nada.
+      </div>
+    </div>
+
+    <div class="ai-card family-card">
+      <div class="ai-card-tag family-tag">IA Aplicada #2</div>
+      <h3>🏠 Pre-Aprobación Hipotecaria con Visión por Computadora</h3>
+      <div class="prob">❓ <em>Problema:</em> La banca tradicional tarda entre 15 y 45 días para aprobar un crédito hipotecario y exige pilas de documentos físicos que muchos no tienen organizados.</div>
+      <div class="sol">
+        ✅ <strong>Solución concreta:</strong> El cliente fotografía sus estados bancarios y el modelo de <strong>Computer Vision + NLP (OCR inteligente)</strong> extrae ingresos, gastos fijos y capacidad de endeudamiento en segundos. El motor de <strong>scoring crediticio (XGBoost + SHAP)</strong> emite una pre-aprobación en <strong>menos de 15 minutos</strong>, mostrando la justificación transparente de por qué fue aprobado o rechazado.
+      </div>
+    </div>
+
+    <div class="ai-card family-card">
+      <div class="ai-card-tag family-tag">IA Aplicada #3</div>
+      <h3>📈 Asesoría Híbrida Biónica (IA + Humano)</h3>
+      <div class="prob">❓ <em>Problema:</em> Para patrimonios entre $10,000 y $100,000 USD, la asesoría humana especializada no es rentable para el banco pero es esencial para el cliente.</div>
+      <div class="sol">
+        ✅ <strong>Solución concreta:</strong> El <strong>BTG Copilot</strong> (modelo LLM + RAG sobre reportes de mercado de BTG Pactual) monitorea automáticamente el portafolio familiar y envía alertas proactivas: <em>"Tu fondo de educación está rindiendo 2.3% por debajo de la meta. Te recomiendo aumentar el aporte mensual en $45 para compensar."</em> Para patrimonios +$50K, un asesor humano recibe el resumen generado por IA y solo interviene para decisiones complejas.
+      </div>
+    </div>
+
+    <div class="ai-card family-card">
+      <div class="ai-card-tag family-tag">IA Aplicada #4</div>
+      <h3>📊 Análisis de Macro y Re-balanceo por Eventos FED</h3>
+      <div class="prob">❓ <em>Problema:</em> Cuando la Reserva Federal sube tasas de interés, los bonos de largo plazo pierden valor. La familia no puede estar monitoreando el mercado.</div>
+      <div class="sol">
+        ✅ <strong>Solución concreta:</strong> Un modelo de <strong>Procesamiento de Lenguaje Natural (NLP)</strong> monitorea las actas de la FED, BCE y bancos centrales regionales en tiempo real. Cuando detecta un cambio de política monetaria significativo, el algoritmo cuantitativo de <strong>Black-Litterman</strong> recalcula la composición óptima del ETF Patrimonio y ejecuta el rebalanceo antes de que el mercado reaccione completamente.
+      </div>
+    </div>
+  </div>
+
+  <div class="result-row">
+    <div class="result-item">
+      <div class="result-val">15 min</div>
+      <div class="result-label">Pre-aprobación hipotecaria con IA</div>
+    </div>
+    <div class="result-item">
+      <div class="result-val">$100</div>
+      <div class="result-label">Inversión mínima en ETF Patrimonio</div>
+    </div>
+    <div class="result-item">
+      <div class="result-val">7-9%</div>
+      <div class="result-label">Rendimiento anual histórico proyectado</div>
+    </div>
+    <div class="result-item">
+      <div class="result-val">$0</div>
+      <div class="result-label">Costo adicional por rebalanceo automático</div>
+    </div>
+  </div>
+
+  <div class="slabel">Flujo de experiencia con IA — Familias</div>
+  <div class="flow">
+    <div class="flow-box">🎯 Define meta familiar<br><span style="font-size:8px;font-weight:400;color:#64748b">Educación / Retiro / Casa</span></div>
+    <div class="flow-arr">→</div>
+    <div class="flow-box">🤖 IA diseña el plan<br><span style="font-size:8px;font-weight:400;color:#64748b">Glide-path dinámico</span></div>
+    <div class="flow-arr">→</div>
+    <div class="flow-box">💰 Aportes automáticos<br><span style="font-size:8px;font-weight:400;color:#64748b">ETF Patrimonio USD</span></div>
+    <div class="flow-arr">→</div>
+    <div class="flow-box">📊 IA monitorea + alerta<br><span style="font-size:8px;font-weight:400;color:#64748b">Ajusta vs. meta</span></div>
+    <div class="flow-arr">→</div>
+    <div class="flow-box">🏁 Meta cumplida<br><span style="font-size:8px;font-weight:400;color:#64748b">Desembolso planificado</span></div>
+  </div>
+
+  <div class="pg-footer">
+    <span>BTG Nexus · Pilar Tecnología & IA · Segmento Familias</span>
+    <span>Generación BTG & TECH 2027-1</span>
+  </div>
+</div>
+
+<!-- ================================================ -->
+<!-- PAGE 4: EMPRESAS                                 -->
+<!-- ================================================ -->
+<div class="page inner">
+  <div class="pg-header">
+    <div>
+      <div class="pg-num">Segmento 03 · Empresas / PyMEs</div>
+      <div class="pg-title">IA para <span>Empresas y Venta de Cartera</span></div>
+    </div>
+    <div class="logo-mini">BTG<span>Nexus</span></div>
+  </div>
+
+  <div class="seg-header biz">
+    <div class="seg-header-icon">🏢</div>
+    <div class="seg-header-content">
+      <div class="seg-header-tag">Segmento 3 de 3 · Empresas</div>
+      <div class="seg-header-name">BTG Business Credit — Factoring IA y Venta de Cartera Estructurada</div>
+      <div class="seg-header-sub">PyMEs, startups y corporativos medianos en Centroamérica con necesidades de liquidez y capital de trabajo</div>
+    </div>
+  </div>
+
+  <div class="slabel">Usos concretos de IA para este segmento</div>
+
+  <div class="ai-grid">
+    <div class="ai-card biz-card">
+      <div class="ai-card-tag biz-tag">IA Aplicada #1</div>
+      <h3>⚡ Credit Scoring Alternativo para PyMEs (sin historial bancario)</h3>
+      <div class="prob">❓ <em>Problema:</em> El 60% de las PyMEs centroamericanas no pueden acceder a crédito formal porque los burós de crédito exigen 3 años de balances auditados que no tienen.</div>
+      <div class="sol">
+        ✅ <strong>Solución concreta:</strong> Modelo de <strong>XGBoost + LightGBM</strong> que ingesta de forma autorizada: facturación electrónica (DGI/Ministerio de Hacienda), movimientos bancarios de los últimos 12 meses (Open Banking), historial de pagos a proveedores y comportamiento de cobro de clientes. Genera un score en <strong>menos de 10 minutos</strong>. Con <strong>SHAP (SHapley Additive Explanations)</strong> se puede explicar al cliente y al regulador exactamente qué variables determinaron el resultado.
+      </div>
+    </div>
+
+    <div class="ai-card biz-card">
+      <div class="ai-card-tag biz-tag">IA Aplicada #2</div>
+      <h3>📦 Factoring Express en 2 Horas (IA + Facturación Electrónica)</h3>
+      <div class="prob">❓ <em>Problema:</em> Una empresa emite una factura hoy pero la cobra en 60 días. Mientras espera, no tiene cómo pagar nómina ni proveedores.</div>
+      <div class="sol">
+        ✅ <strong>Solución concreta:</strong> La empresa sube su factura electrónica a la plataforma. El modelo de IA <strong>evalúa el riesgo del deudor</strong> (quién debe pagar) cruzando datos de su reputación de pago, capacidad financiera y sector económico. En menos de 2 horas, BTG Nexus adelanta el <strong>90% del valor</strong> de la factura. La IA también decide dinámicamente la tasa de descuento (1.5%-2.5%) según el riesgo real del deudor.
+      </div>
+    </div>
+
+    <div class="ai-card biz-card">
+      <div class="ai-card-tag biz-tag">IA Aplicada #3</div>
+      <h3>📈 Cash Flow Forecasting para Ofrecer Crédito Proactivo</h3>
+      <div class="prob">❓ <em>Problema:</em> El 82% de las quiebras de PyMEs son por desfases de flujo de caja, no por falta de rentabilidad. El crédito llega tarde porque el banco lo ofrece reactivamente.</div>
+      <div class="sol">
+        ✅ <strong>Solución concreta:</strong> Modelo de series temporales <strong>Temporal Fusion Transformer (TFT)</strong> que analiza los patrones de ingreso y egreso históricos de la empresa y predice con 85% de confianza si habrá un déficit de liquidez en los próximos 30 días. Cuando detecta el problema, <strong>BTG Nexus ofrece automáticamente una línea de crédito revolvente</strong> con un clic antes de que la empresa entre en crisis, a tasa preferencial.
+      </div>
+    </div>
+
+    <div class="ai-card biz-card">
+      <div class="ai-card-tag biz-tag">IA Aplicada #4</div>
+      <h3>🔗 Estructuración y Venta de Cartera con IA (Securitización)</h3>
+      <div class="prob">❓ <em>Problema:</em> Para seguir creciendo, BTG Nexus necesita liberar capital constantemente sin aumentar el riesgo en su balance.</div>
+      <div class="sol">
+        ✅ <strong>Solución concreta:</strong> Algoritmo de <strong>clustering (K-Means + DBSCAN)</strong> que agrupa los créditos en paquetes homogéneos de riesgo similar (por sector, tamaño, plazo y score). Estos paquetes se estructuran como instrumentos de deuda y se venden a BTG Pactual Global o fondos institucionales. El comprador accede a un <strong>dashboard en tiempo real</strong> con el desempeño de la cartera generado por el motor de monitoreo IA.
+      </div>
+    </div>
+  </div>
+
+  <div class="result-row">
+    <div class="result-item">
+      <div class="result-val">10 min</div>
+      <div class="result-label">Scoring crediticio PyME con IA</div>
+    </div>
+    <div class="result-item">
+      <div class="result-val">2 hrs</div>
+      <div class="result-label">Factoring express (factura → liquidez)</div>
+    </div>
+    <div class="result-item">
+      <div class="result-val">$2 USD</div>
+      <div class="result-label">Costo de originación IA vs $120 tradicional</div>
+    </div>
+    <div class="result-item">
+      <div class="result-val">&lt;2.5%</div>
+      <div class="result-label">Mora proyectada (vs 4.5% mercado)</div>
+    </div>
+  </div>
+
+  <div class="slabel">Flujo de venta de cartera empresarial con IA</div>
+  <div class="flow">
+    <div class="flow-box">🏢 Empresa pide crédito<br><span style="font-size:8px;font-weight:400;color:#64748b">PyME o corporativo</span></div>
+    <div class="flow-arr">→</div>
+    <div class="flow-box">🤖 IA evalúa en 10 min<br><span style="font-size:8px;font-weight:400;color:#64748b">XGBoost + SHAP</span></div>
+    <div class="flow-arr">→</div>
+    <div class="flow-box">💰 BTG desembolsa<br><span style="font-size:8px;font-weight:400;color:#64748b">Crédito originado</span></div>
+    <div class="flow-arr">→</div>
+    <div class="flow-box">📦 IA empaqueta cartera<br><span style="font-size:8px;font-weight:400;color:#64748b">Clustering por riesgo</span></div>
+    <div class="flow-arr">→</div>
+    <div class="flow-box">🌍 Venta a BTG Global<br><span style="font-size:8px;font-weight:400;color:#64748b">Capital liberado → +créditos</span></div>
+  </div>
+
+  <div class="pg-footer">
+    <span>BTG Nexus · Pilar Tecnología & IA · Segmento Empresas</span>
+    <span>Generación BTG & TECH 2027-1</span>
+  </div>
+</div>
+
+<!-- ================================================ -->
+<!-- PAGE 5: RESUMEN TECNOLÓGICO COMPLETO             -->
+<!-- ================================================ -->
+<div class="page inner">
+  <div class="pg-header">
+    <div>
+      <div class="pg-num">Resumen · Pilar Tecnología</div>
+      <div class="pg-title">Arquitectura IA y <span>Stack Tecnológico</span></div>
+    </div>
+    <div class="logo-mini">BTG<span>Nexus</span></div>
+  </div>
+
+  <div class="slabel">Resumen — IA por segmento</div>
+
+  <table style="width:100%;border-collapse:collapse;font-size:9.5px;margin-bottom:16px">
+    <thead>
+      <tr style="background:#0a1628;color:#fff">
+        <th style="padding:8px 10px;text-align:left;font-size:8.5px;letter-spacing:0.8px;text-transform:uppercase">Segmento</th>
+        <th style="padding:8px 10px;text-align:left;font-size:8.5px;letter-spacing:0.8px;text-transform:uppercase">Uso de IA</th>
+        <th style="padding:8px 10px;text-align:left;font-size:8.5px;letter-spacing:0.8px;text-transform:uppercase">Técnica / Modelo</th>
+        <th style="padding:8px 10px;text-align:left;font-size:8.5px;letter-spacing:0.8px;text-transform:uppercase">Resultado de Negocio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid #e4ecf5;background:#eff6ff">
+        <td style="padding:7px 10px;font-weight:700;color:#1e40af">👤 Jóvenes</td>
+        <td style="padding:7px 10px">Asesor financiero conversacional</td>
+        <td style="padding:7px 10px">LLM + RAG (BTG Knowledge Base)</td>
+        <td style="padding:7px 10px">80% consultas sin agente humano · NPS +72</td>
+      </tr>
+      <tr style="border-bottom:1px solid #e4ecf5">
+        <td style="padding:7px 10px;font-weight:700;color:#1e40af">👤 Jóvenes</td>
+        <td style="padding:7px 10px">Rebalanceo automático del ETF Pulse</td>
+        <td style="padding:7px 10px">Mean-Variance + Reinforcement Learning</td>
+        <td style="padding:7px 10px">Tracking error &lt;0.3% · 60% menos costo</td>
+      </tr>
+      <tr style="border-bottom:1px solid #e4ecf5;background:#fefce8">
+        <td style="padding:7px 10px;font-weight:700;color:#92400e">👨‍👩‍👧 Familias</td>
+        <td style="padding:7px 10px">Gestión automatizada de metas (glide-path)</td>
+        <td style="padding:7px 10px">Algoritmo dinámico de reducción de riesgo</td>
+        <td style="padding:7px 10px">0 intervención manual · Meta siempre optimizada</td>
+      </tr>
+      <tr style="border-bottom:1px solid #e4ecf5">
+        <td style="padding:7px 10px;font-weight:700;color:#92400e">👨‍👩‍👧 Familias</td>
+        <td style="padding:7px 10px">Pre-aprobación hipotecaria</td>
+        <td style="padding:7px 10px">Computer Vision + NLP + XGBoost + SHAP</td>
+        <td style="padding:7px 10px">15 min vs 45 días · Explicable al regulador</td>
+      </tr>
+      <tr style="border-bottom:1px solid #e4ecf5;background:#f0fdf4">
+        <td style="padding:7px 10px;font-weight:700;color:#065f46">🏢 Empresas</td>
+        <td style="padding:7px 10px">Scoring PyME sin historial bancario</td>
+        <td style="padding:7px 10px">XGBoost + LightGBM + SHAP (Open Banking)</td>
+        <td style="padding:7px 10px">10 min · Mora &lt;2.5% · Costo: $2 vs $120</td>
+      </tr>
+      <tr style="border-bottom:1px solid #e4ecf5">
+        <td style="padding:7px 10px;font-weight:700;color:#065f46">🏢 Empresas</td>
+        <td style="padding:7px 10px">Detección de fraude y AML</td>
+        <td style="padding:7px 10px">Graph Neural Networks (GNN) streaming</td>
+        <td style="padding:7px 10px">&lt;45ms · 82% menos falsos positivos</td>
+      </tr>
+      <tr style="border-bottom:1px solid #e4ecf5;background:#f0fdf4">
+        <td style="padding:7px 10px;font-weight:700;color:#065f46">🏢 Empresas</td>
+        <td style="padding:7px 10px">Predicción de déficit de flujo de caja</td>
+        <td style="padding:7px 10px">Temporal Fusion Transformer (TFT)</td>
+        <td style="padding:7px 10px">85% precisión · Crédito proactivo +44% conversión</td>
+      </tr>
+      <tr>
+        <td style="padding:7px 10px;font-weight:700;color:#065f46">🏢 Empresas</td>
+        <td style="padding:7px 10px">Estructuración y venta de cartera</td>
+        <td style="padding:7px 10px">Clustering (K-Means + DBSCAN)</td>
+        <td style="padding:7px 10px">Capital liberado para originar más crédito</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="slabel">Stack Tecnológico que Soporta la IA</div>
+  <div class="tech-stack">
+    <div class="tech-item">
+      <h4>☁️ Infraestructura Cloud</h4>
+      <ul>
+        <li>AWS Multi-Zona (Panamá + Miami)</li>
+        <li>Kubernetes + microservicios</li>
+        <li>99.98% uptime · &lt;80ms latencia</li>
+        <li>PCI-DSS L1 · SOC2 Type II</li>
+      </ul>
+    </div>
+    <div class="tech-item">
+      <h4>📡 Plataforma de Datos IA</h4>
+      <ul>
+        <li>Apache Kafka (streaming real-time)</li>
+        <li>Databricks Delta Lake</li>
+        <li>Feast Feature Store (Redis &lt;10ms)</li>
+        <li>MLflow + Kubeflow (MLOps)</li>
+      </ul>
+    </div>
+    <div class="tech-item">
+      <h4>🔐 Seguridad y Gobierno IA</h4>
+      <ul>
+        <li>Zero-Trust Architecture</li>
+        <li>Evidently AI (drift monitoring)</li>
+        <li>SHAP (explicabilidad regulatoria)</li>
+        <li>Fair Lending · Paridad demográfica</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="summary-box">
+    <h3>💬 Lo que debe quedar claro ante los inversionistas</h3>
+    <p>
+      En BTG Nexus, la Inteligencia Artificial <strong>no es un gasto de marketing tecnológico: es la razón por la que el negocio es rentable</strong>. Para <em>jóvenes</em>, la IA democratiza la asesoría financiera de alta gama a costo marginal de cero. Para <em>familias</em>, la IA gestiona el patrimonio 24/7 sin necesidad de un equipo de analistas costoso. Para <em>empresas</em>, la IA reduce el costo de originación de crédito de $120 a $2 dólares, predice crisis de liquidez antes de que ocurran y estructura la venta de cartera que libera capital para seguir creciendo. <strong>Cada modelo de IA tiene una métrica de negocio directa. Eso es lo que diferencia a BTG Nexus.</strong>
+    </p>
+  </div>
+
+  <div class="pg-footer">
+    <span>BTG Nexus · Pilar Tecnología & IA · Resumen Ejecutivo</span>
+    <span>Generación BTG & TECH 2027-1</span>
+  </div>
+</div>
+
+</body>
+</html>
