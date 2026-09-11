@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>BTG Compass — Presentación Estratégica</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap');
+
+:root {
+  --navy: #09121f;
+  --navy-light: #132238;
+  --blue: #1d4ed8;
+  --blue-light: #3b82f6;
+  --gold: #d4af37;
+  --gold-light: #f59e0b;
+  --card-bg: #111d30;
+  --border: rgba(212, 175, 55, 0.2);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: #060b13;
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Widescreen 16:9 Presentation Format */
+.slide {
+  width: 297mm;
+  height: 167mm;
+  margin: 0 auto;
+  position: relative;
+  page-break-after: always;
+  background: linear-gradient(135deg, #09121f 0%, #0d1a2d 60%, #15263f 100%);
+  overflow: hidden;
+  padding: 24px 36px;
+  display: flex;
+  flex-direction: column;
+}
+
+.slide:last-child { page-break-after: auto; }
+
+@media print {
+  body { background: transparent; }
+  .slide { margin: 0; width: 297mm; height: 167mm; }
+}
+
+/* Header & Footer */
+.slide-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 10px;
+  margin-bottom: 16px;
+}
+
+.slide-tag {
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.slide-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.slide-title span {
+  color: var(--blue-light);
+}
+
+.logo-brand {
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+.logo-brand span { color: var(--gold); }
+
+.slide-footer {
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  font-size: 8px;
+  color: var(--text-muted);
+}
+
+/* Common Components */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+
+.card {
+  background: rgba(19, 34, 56, 0.7);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.card.highlight {
+  border-left: 3px solid var(--gold);
+  background: rgba(20, 38, 65, 0.85);
+}
+
+.card h3 {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.card p, .card li {
+  font-size: 9px;
+  color: #cbd5e1;
+  line-height: 1.45;
+}
+
+.metric-badge {
+  display: inline-block;
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  color: var(--gold);
+  font-size: 8px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 12px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+/* ================= SLIDE 1: PORTADA ================= */
+.cover-slide {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  background: radial-gradient(circle at center, #12243d 0%, #09121f 80%);
+}
+
+.cover-badge {
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+.cover-h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+.cover-h1 span { color: var(--gold); }
+
+.cover-sub {
+  font-size: 15px;
+  color: #93c5fd;
+  font-weight: 400;
+  max-width: 700px;
+  margin-bottom: 24px;
+}
+
+.cover-pillars {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.pill-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 10px 18px;
+  border-radius: 6px;
+  text-align: left;
+}
+.pill-card strong { font-size: 10.5px; color: #fff; display: block; }
+.pill-card span { font-size: 8.5px; color: var(--text-muted); }
+
+/* Table styles */
+.exec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 8.8px;
+  background: rgba(19, 34, 56, 0.6);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.exec-table th {
+  background: #08111e;
+  color: var(--gold);
+  font-weight: 700;
+  padding: 7px 10px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  text-transform: uppercase;
+  font-size: 8px;
+  letter-spacing: 0.8px;
+}
+
+.exec-table td {
+  padding: 6px 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  color: #e2e8f0;
+}
+
+.exec-table tr:hover { background: rgba(255,255,255,0.03); }
+
+/* Flow diagram */
+.flow-diagram {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.flow-step {
+  flex: 1;
+  background: rgba(19, 34, 56, 0.85);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 6px;
+  padding: 10px;
+  text-align: center;
+}
+.flow-step strong { font-size: 10px; color: #93c5fd; display: block; margin-bottom: 3px; }
+.flow-step p { font-size: 8px; color: #cbd5e1; line-height: 1.3; }
+.flow-arrow { font-size: 14px; color: var(--gold); }
+
+/* Budget chart styling */
+.budget-bar-container {
+  display: flex;
+  height: 22px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+.b-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  font-weight: 800;
+  color: #fff;
+}
+
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: PORTADA -->
+<div class="slide cover-slide">
+  <div class="cover-badge">Assessment Center · Generación BTG & TECH 2027-1</div>
+  <div class="cover-h1">BTG <span>COMPASS</span></div>
+  <div class="cover-sub">Asesor de Inversión Cuantitativo impulsado por IA para la Expansión en Centroamérica</div>
+  
+  <div style="font-size: 10.5px; color: #e2e8f0; max-width: 650px; margin-bottom: 20px; line-height: 1.6;">
+    "Democratizar el acceso a portafolios diversificados en dólares, antes exclusivos para grandes patrimonios, mediante optimización cuantitativa continua y explicabilidad generativa."
+  </div>
+
+  <div class="cover-pillars">
+    <div class="pill-card">
+      <strong>👤 Jóvenes</strong>
+      <span>Fracciones desde $10 USD</span>
+    </div>
+    <div class="pill-card">
+      <strong>👨‍👩‍👧 Familias</strong>
+      <span>Glide-Path por metas</span>
+    </div>
+    <div class="pill-card">
+      <strong>🏢 Tesorerías</strong>
+      <span>Liquidez y excedentes</span>
+    </div>
+    <div class="pill-card">
+      <strong>💼 Capital Asignado</strong>
+      <span>USD $25M (24-36 meses)</span>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 2: OPORTUNIDAD & PROPUESTA DE VALOR -->
+<div class="slide">
+  <div class="slide-header">
+    <div>
+      <div class="slide-tag">01 · Tesis Estratégica</div>
+      <div class="slide-title">Propuesta de Valor & <span>Oportunidad Regional</span></div>
+    </div>
+    <div class="logo-brand">BTG <span>COMPASS</span></div>
+  </div>
+
+  <div class="grid-2" style="margin-bottom: 12px;">
+    <div class="card highlight">
+      <span class="metric-badge">El Problema Estructural</span>
+      <h3>Barrera de Entrada en Centroamérica</h3>
+      <ul style="margin-left: 12px; margin-top: 4px;">
+        <li style="margin-bottom: 4px;"><strong>Altos mínimos de inversión:</strong> La banca privada tradicional exige entre USD $100K y $250K para acceso a portafolios en EE.UU.</li>
+        <li style="margin-bottom: 4px;"><strong>Cuentas corrientes ociosas:</strong> Empresas y retail sufren erosión por inflación sin alternativas de renta fija líquida en dólares.</li>
+        <li><strong>Falta de asesoría accesible:</strong> Un banquero dedicado cuesta ~$150/h, volviendo inviable la atención personalizada masiva.</li>
+      </ul>
+    </div>
+
+    <div class="card highlight">
+      <span class="metric-badge">La Solución BTG Compass</span>
+      <h3>Robo-Advisor Institucional con IA</h3>
+      <ul style="margin-left: 12px; margin-top: 4px;">
+        <li style="margin-bottom: 4px;"><strong>Democratización real:</strong> Portafolios optimizados de ETFs globales desde montos accesibles ($10-$100 USD).</li>
+        <li style="margin-bottom: 4px;"><strong>Costos marginales mínimos:</strong> El motor cuantitativo y la IA atienden a 100,000 usuarios con el mismo costo fijo de infraestructura.</li>
+        <li><strong>First-Mover regional:</strong> Primera propuesta en Centroamérica respaldada por la solidez y el research de BTG Pactual.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" style="background: rgba(14, 30, 52, 0.95); border-left: 3px solid var(--blue-light);">
+    <h3>🎯 Ventaja Competitiva frente a Fintechs de EE.UU. (Betterment / Wealthfront)</h3>
+    <p style="font-size: 8.8px;">
+      A diferencia de las fintechs foráneas que exigen cuentas bancarias en EE.UU. o transferencias wire costosas, <strong>BTG Compass se integra con el ecosistema financiero local</strong>, resuelve la custodia y el marco regulatorio en cada país centroamericano, y ofrece atención híbrida humana para cuentas corporativas.
+    </p>
+  </div>
+
+  <div class="slide-footer">
+    <span>BTG Pactual · Expansión Centroamérica 2027</span>
+    <span>Lámina 02</span>
+  </div>
+</div>
+
+<!-- SLIDE 3: MECÁNICA DEL PRODUCTO -->
+<div class="slide">
+  <div class="slide-header">
+    <div>
+      <div class="slide-tag">02 · Flujo Operativo</div>
+      <div class="slide-title">Cómo Funciona: <span>Mecánica Integral del Producto</span></div>
+    </div>
+    <div class="logo-brand">BTG <span>COMPASS</span></div>
+  </div>
+
+  <div class="flow-diagram">
+    <div class="flow-step">
+      <span class="metric-badge">Paso 1</span>
+      <strong>Perfilamiento Dinámico</strong>
+      <p>Cuestionario interactivo: horizonte temporal, tolerancia a la pérdida, liquidez y metas patrimoniales.</p>
+    </div>
+    <div class="flow-arrow">➔</div>
+    <div class="flow-step">
+      <span class="metric-badge">Paso 2</span>
+      <strong>Motor de Optimización</strong>
+      <p>Modelo Markowitz Mean-Variance + Black-Litterman que ensambla el portafolio óptimo de ETFs en USD.</p>
+    </div>
+    <div class="flow-arrow">➔</div>
+    <div class="flow-step">
+      <span class="metric-badge">Paso 3</span>
+      <strong>Ejecución y Custodia</strong>
+      <p>Órdenes fraccionadas enviadas vía API a custodios institucionales con ejecución algorítmica VWAP.</p>
+    </div>
+    <div class="flow-arrow">➔</div>
+    <div class="flow-step">
+      <span class="metric-badge">Paso 4</span>
+      <strong>Rebalanceo Automático</strong>
+      <p>Monitoreo 24/7. Ajuste disciplinado cuando el mercado o perfil desvían las ponderaciones objetivo.</p>
+    </div>
+    <div class="flow-arrow">➔</div>
+    <div class="flow-step">
+      <span class="metric-badge">Paso 5</span>
+      <strong>Explicabilidad GenAI</strong>
+      <p>Asistente RAG que traduce movimientos de mercado a lenguaje simple ("¿Por qué varió mi portafolio?").</p>
+    </div>
+  </div>
+
+  <div class="grid-2" style="margin-top: 14px;">
+    <div class="card">
+      <h3>📐 Base Cuantitativa Rigurosa</h3>
+      <p>No dejamos la asignación de activos a un modelo de lenguaje. La matemática financiera (Markowitz, restricciones de concentración y duración) garantiza carteras con máxima diversificación por unidad de riesgo.</p>
+    </div>
+    <div class="card">
+      <h3>💬 Capa de IA Generativa Contextual</h3>
+      <p>El LLM actúa estrictamente como traductor pedagógico. Consulta los reportes macroeconómicos de BTG Research para responder dudas del cliente de forma transparente y sin alucinaciones.</p>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Mecánica Operativa End-to-End</span>
+    <span>Lámina 03</span>
+  </div>
+</div>
+
+<!-- SLIDE 4: SEGMENTACIÓN ESTRATÉGICA -->
+<div class="slide">
+  <div class="slide-header">
+    <div>
+      <div class="slide-tag">03 · Segmentación de Clientes</div>
+      <div class="slide-title">Diferenciación & <span>Personalización por Segmento</span></div>
+    </div>
+    <div class="logo-brand">BTG <span>COMPASS</span></div>
+  </div>
+
+  <div class="grid-3">
+    <div class="card" style="border-top: 3px solid #3b82f6;">
+      <span class="metric-badge" style="color: #60a5fa; border-color: #3b82f6;">Retail · Jóvenes</span>
+      <h3 style="color: #93c5fd;">Jóvenes Inversores (18-35)</h3>
+      <p style="margin-bottom: 6px;"><strong>Perfil:</strong> Tickets bajos ($10-$50), alta tolerancia al riesgo, hambre de aprendizaje.</p>
+      <ul style="margin-left: 10px;">
+        <li>Tickets fraccionados desde $10 USD.</li>
+        <li>Portafolios con sesgo a renta variable global, tecnología e innovación.</li>
+        <li>Gamificación del ahorro (redondeo de consumos) y copiloto educativo.</li>
+      </ul>
+    </div>
+
+    <div class="card" style="border-top: 3px solid #f59e0b;">
+      <span class="metric-badge" style="color: #fbbf24; border-color: #f59e0b;">Wealth · Familias</span>
+      <h3 style="color: #fcd34d;">Familias (30-55)</h3>
+      <p style="margin-bottom: 6px;"><strong>Perfil:</strong> Preservación de capital, educación de hijos, compra de vivienda y retiro.</p>
+      <ul style="margin-left: 10px;">
+        <li>Portafolios multimetas con <em>Glide-Path</em> (reducción automática de riesgo con el tiempo).</li>
+        <li>Mix balanceado de renta fija soberana/corporativa y acciones defensivas.</li>
+        <li>Rebalanceo fiscalmente eficiente con nuevos aportes.</li>
+      </ul>
+    </div>
+
+    <div class="card" style="border-top: 3px solid #10b981;">
+      <span class="metric-badge" style="color: #34d399; border-color: #10b981;">B2B · Corporativo</span>
+      <h3 style="color: #6ee7b7;">Empresas (Exceso de Caja)</h3>
+      <p style="margin-bottom: 6px;"><strong>Perfil:</strong> Tesorería corporativa ociosa, aversión total al riesgo crediticio, liquidez inmediata.</p>
+      <ul style="margin-left: 10px;">
+        <li><strong>Foco en liquidez:</strong> Tramos ultracortos (Money Market, T-Bills, renta fija <90 días).</li>
+        <li>Optimización dinámica de duración frente a movimientos de tasas de la FED.</li>
+        <li><strong>Modelo Híbrido:</strong> Algoritmo de cash flow + atención de un banquero senior.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top: 10px; background: rgba(9, 23, 41, 0.8);">
+    <p style="font-size: 8.5px; color: #cbd5e1;">
+      <strong>Punto crítico para tesorerías:</strong> Las empresas no buscan rendimientos agresivos a 10 años; buscan que su caja rinda 150-250 bps sobre cuenta corriente sin riesgo de bloqueo de capital para nóminas e impuestos.
+    </p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Segmentación y Fit de Producto</span>
+    <span>Lámina 04</span>
+  </div>
+</div>
+
+<!-- SLIDE 5: ARQUITECTURA TECNOLÓGICA -->
+<div class="slide">
+  <div class="slide-header">
+    <div>
+      <div class="slide-tag">04 · Arquitectura & Datos</div>
+      <div class="slide-title">Infraestructura Tecnológica & <span>Base Cuantitativa</span></div>
+    </div>
+    <div class="logo-brand">BTG <span>COMPASS</span></div>
+  </div>
+
+  <div class="grid-4">
+    <div class="card">
+      <span class="metric-badge">Capa 01</span>
+      <h3>Motor Cuantitativo</h3>
+      <p>Mean-Variance Markowitz con restricciones convexas (mínimos/máximos por activo). Ingesta de views macro de BTG Research vía Black-Litterman.</p>
+    </div>
+    <div class="card">
+      <span class="metric-badge">Capa 02</span>
+      <h3>IA Explicativa (RAG)</h3>
+      <p>LLM orquestado con LangChain/LlamaIndex sobre base vectorial con reportes y fichas técnicas de ETFs. Sin decisiones autónomas de compra/venta.</p>
+    </div>
+    <div class="card">
+      <span class="metric-badge">Capa 03</span>
+      <h3>APIs de Custodia</h3>
+      <p>Conexión FIX/REST con brokers y custodios globales regulados. Liquidación y asignación de órdenes fraccionadas con mínima latencia.</p>
+    </div>
+    <div class="card">
+      <span class="metric-badge">Capa 04</span>
+      <h3>Risk Dashboard</h3>
+      <p>Monitoreo continuo de tracking error, VaR, estrés de liquidez y circuit breakers automatizados ante choques de volatilidad.</p>
+    </div>
+  </div>
+
+  <div class="card highlight" style="margin-top: 12px;">
+    <h3>🛡️ Credibilidad Técnica para la Sustentación</h3>
+    <p style="font-size: 8.8px;">
+      La IA generativa se reserva exclusivamente para la capa de interfaz y reporte conversacional. <strong>La asignación patrimonial está gobernada por algoritmos matemáticos deterministas y auditables</strong>. Esto garantiza total explicabilidad frente a los reguladores y elimina cualquier riesgo de "alucinación" en el manejo de fondos.
+    </p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Tecnología e Infraestructura</span>
+    <span>Lámina 05</span>
+  </div>
+</div>
+
+<!-- SLIDE 6: SUPUESTOS ESTRATÉGICOS (S0-S7) -->
+<div class="slide">
+  <div class="slide-header">
+    <div>
+      <div class="slide-tag">05 · Marco de Supuestos</div>
+      <div class="slide-title">Supuestos Críticos del Proyecto <span>(S0 – S7)</span></div>
+    </div>
+    <div class="logo-brand">BTG <span>COMPASS</span></div>
+  </div>
+
+  <table class="exec-table">
+    <thead>
+      <tr>
+        <th style="width: 14%;">Supuesto</th>
+        <th style="width: 46%;">Justificación Estratégica</th>
+        <th style="width: 40%;">Impacto si es Falso (Plan B)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>S0 · Moneda</strong></td>
+        <td>Presupuesto en USD $25M; moneda de inversión estándar regional (Panamá/El Salvador).</td>
+        <td>Descalce cambiario; requeriría cobertura sintética de divisas.</td>
+      </tr>
+      <tr>
+        <td><strong>S1 · Entrada Panamá</strong></td>
+        <td>Hub financiero con marco regulatorio de valores consolidado y dolarización plena.</td>
+        <td>Time-to-market se prolonga 6-12 meses en otros países.</td>
+      </tr>
+      <tr>
+        <td><strong>S2 · Horizonte 24-36m</strong></td>
+        <td>Los $25M cubren el runway hasta alcanzar breakeven operativo, no un solo año.</td>
+        <td>Exigiría ronda de capitalización adicional en mes 14.</td>
+      </tr>
+      <tr>
+        <td><strong>S3 · Licencia Existente</strong></td>
+        <td>Operar bajo licencias actuales de BTG o alianza con broker local registrado.</td>
+        <td>40-60% del budget se desvía a trámites regulatorios y licencias de novo.</td>
+      </tr>
+      <tr>
+        <td><strong>S4 · Custodia API</strong></td>
+        <td>Ejecución vía broker-dealer establecido; no construir custodia desde cero.</td>
+        <td>CAPEX tecnológico se triplicaría, volviendo inviable el proyecto.</td>
+      </tr>
+      <tr>
+        <td><strong>S5 · Cuant Probado</strong></td>
+        <td>Algoritmos validados de media-varianza; GenAI solo para interacción/RAG.</td>
+        <td>Riesgo de modelo inaceptable y veto de los reguladores.</td>
+      </tr>
+      <tr>
+        <td><strong>S6 · Datos Mercado</strong></td>
+        <td>Feeds de mercado con latencia estándar; rebalanceo diario o semanal, no HFT.</td>
+        <td>Sobrecosto en infraestructura de datos en tiempo real de baja latencia.</td>
+      </tr>
+      <tr>
+        <td><strong>S7 · Adopción & CAC</strong></td>
+        <td>CAC retail USD $25-$35; volumen masivo compensado por alto AUM corporativo.</td>
+        <td>Aceleración del canal B2B para subsidiar adquisición retail.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="slide-footer">
+    <span>Evaluación de Supuestos y Sensibilidad</span>
+    <span>Lámina 06</span>
+  </div>
+</div>
+
+<!-- SLIDE 7: GESTIÓN DE RIESGOS Y CONTINGENCIA -->
+<div class="slide">
+  <div class="slide-header">
+    <div>
+      <div class="slide-tag">06 · Gestión de Riesgos</div>
+      <div class="slide-title">Riesgos Críticos & <span>Planes de Contingencia</span></div>
+    </div>
+    <div class="logo-brand">BTG <span>COMPASS</span></div>
+  </div>
+
+  <div class="grid-2">
+    <!-- Riesgo 1 -->
+    <div class="card" style="border-top: 3px solid #ef4444;">
+      <span class="metric-badge" style="color: #f87171; border-color: #ef4444;">Riesgo 1 · Modelo y Mercado</span>
+      <h3 style="color: #fca5a5;">Fallo Algorítmico en Eventos Extremos</h3>
+      <p style="font-size: 8.5px; margin-bottom: 6px;"><strong>Descripción:</strong> Pérdida de correlaciones históricas y rebalanceos forzados en picos de volatilidad (estilo marzo 2020).</p>
+      
+      <div style="background: rgba(0,0,0,0.25); padding: 6px; border-radius: 4px; margin-bottom: 5px;">
+        <strong style="font-size: 8px; color: var(--gold);">Mitigación Ex-Ante:</strong>
+        <p style="font-size: 7.8px;">• Guardrails duros de concentración y rotación máxima.<br>• Circuit breakers automáticos ante picos de volatilidad.<br>• Backtesting en escenarios 2008 y 2020 antes de prod.</p>
+      </div>
+
+      <div style="background: rgba(0,0,0,0.25); padding: 6px; border-radius: 4px;">
+        <strong style="font-size: 8px; color: #f87171;">Contingencia Ex-Post:</strong>
+        <p style="font-size: 7.8px;">• Congelación del motor y paso a rebalanceo manual.<br>• Rollback inmediato a versión estable previa.<br>• Comunicación proactiva al cliente en <24 horas.</p>
+      </div>
+    </div>
+
+    <!-- Riesgo 2 -->
+    <div class="card" style="border-top: 3px solid #f97316;">
+      <span class="metric-badge" style="color: #fb923c; border-color: #f97316;">Riesgo 2 · Dependencia & Seguridad</span>
+      <h3 style="color: #fdba74;">Fallo de Terceros & Prompt Injection</h3>
+      <p style="font-size: 8.5px; margin-bottom: 6px;"><strong>Descripción:</strong> Caída de APIs del custodio externo, fuga de credenciales o manipulación maliciosa de la IA.</p>
+      
+      <div style="background: rgba(0,0,0,0.25); padding: 6px; border-radius: 4px; margin-bottom: 5px;">
+        <strong style="font-size: 8px; color: var(--gold);">Mitigación Ex-Ante:</strong>
+        <p style="font-size: 7.8px;">• Capa de abstracción sobre custodios (cambio plug-and-play).<br>• Proveedor secundario de data preconfigurado con conmutación.<br>• Acceso restringido del LLM (solo sesión autenticada).</p>
+      </div>
+
+      <div style="background: rgba(0,0,0,0.25); padding: 6px; border-radius: 4px;">
+        <strong style="font-size: 8px; color: #fb923c;">Contingencia Ex-Post:</strong>
+        <p style="font-size: 7.8px;">• Modo degradado: app mantiene saldos y encola órdenes.<br>• Activación de runbook de conmutación a broker secundario.<br>• Aislamiento de red y notificación legal a reguladores.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Matriz de Riesgos y Resiliencia Operativa</span>
+    <span>Lámina 07</span>
+  </div>
+</div>
+
+<!-- SLIDE 8: MODELO DE RENTABILIDAD -->
+<div class="slide">
+  <div class="slide-header">
+    <div>
+      <div class="slide-tag">07 · Viabilidad Financiera</div>
+      <div class="slide-title">Modelo de Negocio & <span>Proyección de Rentabilidad</span></div>
+    </div>
+    <div class="logo-brand">BTG <span>COMPASS</span></div>
+  </div>
+
+  <div class="grid-3" style="margin-bottom: 12px;">
+    <div class="card highlight">
+      <span class="metric-badge">Ingreso Principal</span>
+      <h3>AUM Management Fee</h3>
+      <p style="font-size: 8.8px; margin-bottom: 4px;">Comisión anual de administración sobre activos gestionados (0.50% - 1.00%).</p>
+      <p style="font-size: 8px; color: #94a3b8;">• Jóvenes: 0.50% (facilita onboarding).<br>• Familias: 0.85% (metas y glide-path).<br>• Corporativo: 0.65% (alto volumen).</p>
+    </div>
+
+    <div class="card highlight">
+      <span class="metric-badge">Ingreso B2B</span>
+      <h3>Suscripción de Tesorería</h3>
+      <p style="font-size: 8.8px; margin-bottom: 4px;">Fee mensual/anual a empresas por herramientas avanzadas de tesorería.</p>
+      <p style="font-size: 8px; color: #94a3b8;">• Dashboard de flujo de caja en tiempo real.<br>• Proyecciones predictivas de liquidez.<br>• Alertas automatizadas de desembolso.</p>
+    </div>
+
+    <div class="card highlight">
+      <span class="metric-badge">Expansión BTG</span>
+      <h3>Cross-Selling Institucional</h3>
+      <p style="font-size: 8.8px; margin-bottom: 4px;">Monetización indirecta de alta rentabilidad para el banco.</p>
+      <p style="font-size: 8px; color: #94a3b8;">• Crédito estructurado y factoring.<br>• Coberturas cambiarias y derivados.<br>• Banca privada tradicional a familias consolidadas.</p>
+    </div>
+  </div>
+
+  <div class="card" style="background: linear-gradient(90deg, #0f2442, #183863); border: 1px solid var(--gold);">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h3 style="font-size: 13px; color: var(--gold);">Caso Base: USD $500M en AUM (Año 3)</h3>
+        <p style="font-size: 9px; color: #e2e8f0;">
+          Con una comisión promedio ponderada del <strong>0.75% a 1.00% anual</strong>, BTG Compass genera <strong>USD $3.75M a $5.0M anuales en comisiones puras</strong>, con margen operativo >65% debido a la estructura de costos digitales fijos.
+        </p>
+      </div>
+      <div style="text-align: right; min-width: 140px;">
+        <div style="font-size: 22px; font-weight: 900; color: var(--gold);">$5.0M/año</div>
+        <div style="font-size: 7.5px; color: #93c5fd; text-transform: uppercase;">Run-rate comisiones año 3</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Estructura de Ingresos y Escalamiento</span>
+    <span>Lámina 08</span>
+  </div>
+</div>
+
+<!-- SLIDE 9: PRESUPUESTO ($25M) -->
+<div class="slide">
+  <div class="slide-header">
+    <div>
+      <div class="slide-tag">08 · Asignación de Capital</div>
+      <div class="slide-title">Presupuesto Estratégico: <span>Distribución de USD $25M</span></div>
+    </div>
+    <div class="logo-brand">BTG <span>COMPASS</span></div>
+  </div>
+
+  <!-- Visual Budget Bar -->
+  <div class="budget-bar-container">
+    <div class="b-bar" style="width: 32%; background: #1d4ed8;">Tech 32% ($8M)</div>
+    <div class="b-bar" style="width: 24%; background: #3b82f6;">Mkt 24% ($6M)</div>
+    <div class="b-bar" style="width: 16%; background: #d97706;">Talento 16% ($4M)</div>
+    <div class="b-bar" style="width: 12%; background: #059669;">Reg 12% ($3M)</div>
+    <div class="b-bar" style="width: 8%; background: #6366f1;">Ali $2M</div>
+    <div class="b-bar" style="width: 8%; background: #dc2626;">Res $2M</div>
+  </div>
+
+  <div class="grid-3" style="font-size: 8.5px;">
+    <div class="card">
+      <span class="metric-badge">32% · $8.0M</span>
+      <h3>Tecnología & Motor Cuantitativo</h3>
+      <p>El motor ES el producto. Financia desarrollo de optimización, capa RAG, APIs de brokers y monitoreo de riesgo en tiempo real.</p>
+    </div>
+
+    <div class="card">
+      <span class="metric-badge">24% · $6.0M</span>
+      <h3>Adquisición & Marketing</h3>
+      <p>Tres canales segmentados: gamificación para jóvenes (CAC $25-$35), metas familiares y fuerza de venta consultiva B2B.</p>
+    </div>
+
+    <div class="card">
+      <span class="metric-badge">16% · $4.0M</span>
+      <h3>Estrategia de Talento ("Lab")</h3>
+      <p>Núcleo técnico local en países piloto, rotación junior, mentoría senior y bonos variables atados a AUM.</p>
+    </div>
+
+    <div class="card">
+      <span class="metric-badge">12% · $3.0M</span>
+      <h3>Regulatorio & Compliance</h3>
+      <p>Licenciamiento explícito país por país para asesoría automatizada, auditoría jurídica y blindaje regulatorio.</p>
+    </div>
+
+    <div class="card">
+      <span class="metric-badge">8% · $2.0M</span>
+      <h3>Alianzas Custodios / Brokers</h3>
+      <p>Integración de infraestructura de mercado existente sin incurrir en CAPEX millonario de custodia propia.</p>
+    </div>
+
+    <div class="card">
+      <span class="metric-badge">8% · $2.0M</span>
+      <h3>Reserva de Contingencia</h3>
+      <p>Fondo de cobertura ante eventos de cisne negro, descalces de modelo y pruebas de estrés extremas.</p>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Horizonte de Ejecución: 24-36 Meses hasta Breakeven</span>
+    <span>Lámina 09</span>
+  </div>
+</div>
+
+<!-- SLIDE 10: TALENTO (BTG COMPASS LAB) -->
+<div class="slide">
+  <div class="slide-header">
+    <div>
+      <div class="slide-tag">09 · Organización y Talento</div>
+      <div class="slide-title">Estrategia de Talento: <span>"BTG Compass Lab" ($4M)</span></div>
+    </div>
+    <div class="logo-brand">BTG <span>COMPASS</span></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card highlight">
+      <span class="metric-badge">$2.0M · Núcleo Técnico</span>
+      <h3>Quants e Ingenieros de ML Locales</h3>
+      <ul style="margin-left: 10px; margin-top: 4px;">
+        <li style="margin-bottom: 4px;">Reclutamiento de científicos de datos y quants en Costa Rica y Guatemala.</li>
+        <li style="margin-bottom: 4px;">Ventaja de costos: 50% más eficiente que contratar en hubs de EE.UU.</li>
+        <li>Conocimiento nativo de la regulación financiera y los flujos locales.</li>
+      </ul>
+    </div>
+
+    <div class="card highlight">
+      <span class="metric-badge">$1.0M · Mentoría & Rotación</span>
+      <h3>Rotación Junior + Portfolio Managers Senior</h3>
+      <ul style="margin-left: 10px; margin-top: 4px;">
+        <li style="margin-bottom: 4px;">Graduados de excelencia construyen junto a banqueros senior de BTG.</li>
+        <li style="margin-bottom: 4px;">Diferencial vs Fintechs: prestigio de marca y escuela de banca de inversión.</li>
+        <li>Velocidad de ejecución de startup respaldada por solidez institucional.</li>
+      </ul>
+    </div>
+
+    <div class="card highlight">
+      <span class="metric-badge">Modelo Operativo</span>
+      <h3>Modelo Híbrido para Cuentas Corporativas</h3>
+      <ul style="margin-left: 10px; margin-top: 4px;">
+        <li style="margin-bottom: 4px;">En tesorerías, la IA no reemplaza al asesor: lo potencia.</li>
+        <li style="margin-bottom: 4px;">El CFO interactúa con un asesor humano respaldado por analítica algorítmica.</li>
+        <li>Ruta de desarrollo: analistas técnicos crecen hacia banqueros híbridos.</li>
+      </ul>
+    </div>
+
+    <div class="card highlight">
+      <span class="metric-badge">$1.0M · Incentivos & Marca</span>
+      <h3>Retención & Employer Branding</h3>
+      <ul style="margin-left: 10px; margin-top: 4px;">
+        <li style="margin-bottom: 4px;"><strong>$700K en bonos variables</strong> indexados al crecimiento real de AUM.</li>
+        <li style="margin-bottom: 4px;"><strong>$300K en Employer Branding</strong> en las mejores universidades técnicas.</li>
+        <li>Uso de BTG Compass como caso de estudio académico para atraer talento top.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Estructura de Capital Humano y Ventaja Competitiva</span>
+    <span>Lámina 10</span>
+  </div>
+</div>
+
+<!-- SLIDE 11: CONCLUSIÓN -->
+<div class="slide cover-slide">
+  <div class="cover-badge">Resumen Ejecutivo de Cierre</div>
+  <div class="cover-h1">¿Por Qué <span>BTG Compass</span> Gana?</div>
+  
+  <div class="grid-3" style="max-width: 900px; margin-top: 16px; text-align: left;">
+    <div class="card" style="border-left: 3px solid var(--blue-light);">
+      <strong style="color: #93c5fd; font-size: 11px;">Rigor Cuantitativo</strong>
+      <p style="font-size: 8.5px; margin-top: 4px; color: #cbd5e1;">Base matemática sólida que protege el patrimonio institucional y supera a chatbots genéricos.</p>
+    </div>
+
+    <div class="card" style="border-left: 3px solid var(--gold);">
+      <strong style="color: var(--gold); font-size: 11px;">Ventaja de Primer Movedor</strong>
+      <p style="font-size: 8.5px; margin-top: 4px; color: #cbd5e1;">Captura de cuota de mercado en Centroamérica antes de la llegada de fintechs extranjeras.</p>
+    </div>
+
+    <div class="card" style="border-left: 3px solid #10b981;">
+      <strong style="color: #6ee7b7; font-size: 11px;">Retorno & Escalabilidad</strong>
+      <p style="font-size: 8.5px; margin-top: 4px; color: #cbd5e1;">Costo marginal decreciente con proyección de $500M AUM y >65% de margen operativo.</p>
+    </div>
+  </div>
+
+  <div style="margin-top: 24px; font-size: 11px; color: var(--gold); font-weight: 700; letter-spacing: 1px;">
+    BTG PACTUAL · GENERACIÓN BTG & TECH 2027-1
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+================================================================================
+BTG COMPASS — PILAR DE TECNOLOGÍA E INTELIGENCIA ARTIFICIAL
+Propuesta Técnica y Arquitectura de Asesoría de Inversión Automatizada
+BTG Pactual · Generación BTG & TECH 2027-1
+================================================================================
+
+1. RESUMEN EJECUTIVO DE TECNOLOGÍA
+--------------------------------------------------------------------------------
+BTG Compass es una plataforma de inversión automatizada (Robo-Advisor institucional)
+diseñada para estructurar, monitorear y rebalancear portafolios diversificados de 
+ETFs en dólares estadounidenses.
+
+Diferencial técnico clave:
+No es un "chatbot superficial con IA generativa". La arquitectura separa 
+estrictamente el motor cuantitativo de toma de decisiones financieras (modelos 
+matemáticos determinísticos y optimización de media-varianza) de la capa de 
+interfaz y explicabilidad (IA generativa con arquitectura RAG).
+
+La tecnología permite operar con costo marginal cercano a cero en retail y 
+brindar herramientas de tesorería institucional de alta precisión para empresas.
+
+
+2. ARQUITECTURA TÉCNICA EN CUATRO CAPAS
+--------------------------------------------------------------------------------
+Capa 1: Motor Cuantitativo de Asignación y Optimización (Core Engine)
+- Metodología: Optimización moderna de portafolio (Markowitz Mean-Variance) 
+  con restricciones convexas y modelo Black-Litterman para incorporar vistas 
+  macroeconómicas de BTG Research.
+- Función: Asignación eficiente de activos según perfil de riesgo, horizonte 
+  temporal y restricciones de liquidez.
+- Ejecución: Determinística, auditable y libre de alucinaciones.
+
+Capa 2: Capa de Inteligencia Artificial Generativa y Explicabilidad (GenAI Layer)
+- Arquitectura: Retrieval-Augmented Generation (RAG) conectado a la base de 
+  conocimiento de research macroeconómico y fichas técnicas de ETFs de BTG Pactual.
+- Función: Traducir las decisiones cuantitativas complejas en narrativa accesible 
+  para el cliente ("¿Por qué cambió mi asignación esta semana?").
+- Asistente conversacional 24/7 disponible vía App móvil y canales digitales.
+
+Capa 3: Motor de Integración y Ejecución de Órdenes (Integration & Broker Layer)
+- Conexión vía API REST/FIX con custodios internacionales y brokers regulados.
+- Ejecución de compras fraccionadas de ETFs y rebalanceo por lotes (batch orders) 
+  utilizando algoritmos de ejecución VWAP/TWAP para minimizar impacto de mercado.
+
+Capa 4: Dashboard de Control de Riesgo y Monitoreo en Tiempo Real (Risk Dashboard)
+- Monitoreo continuo de desvíos de tracking error, volatilidades realizadas, 
+  VaR (Value at Risk) y estrés de liquidez.
+- Circuit breakers automatizados que suspenden rebalanceos automáticos ante 
+  picos anómalos de volatilidad en los mercados.
+
+
+3. APLICACIÓN CONCRETA DE IA POR SEGMENTO DE CLIENTE
+--------------------------------------------------------------------------------
+
+A. SEGMENTO: JÓVENES (18-35 AÑOS)
+   Necesidad: Tickets pequeños, alta tolerancia al riesgo, necesidad educativa.
+   
+   Uso Concreto 1: Micro-perfilamiento dinámico y gamificación financiera
+   - La IA adapta el cuestionario de tolerancia al riesgo a través de situaciones 
+     interactivas simuladas en lugar de formularios burocráticos estáticos.
+   - Ajusta dinámicamente el perfil del inversor conforme su comportamiento 
+     de ahorro y tolerancia ante volatilidades pasadas.
+
+   Uso Concreto 2: Inversión Fraccionada Inteligente
+   - El motor algorítmico permite comprar fracciones de ETFs internacionales 
+     desde montos mínimos (USD $10 - $25), optimizando comisiones de corretaje 
+     mediante consolidación de órdenes en bloque.
+
+   Uso Concreto 3: Copilot Financiero Pedagógico (RAG)
+   - Explicación en lenguaje simple de conceptos como diversificación, 
+     volatilidad e interés compuesto, contextualizados en el portafolio real 
+     del usuario.
+
+
+B. SEGMENTO: FAMILIAS (30-55 AÑOS)
+   Necesidad: Preservación de capital, metas patrimoniales a mediano y largo plazo 
+   (educación universitaria, vivienda, jubilación).
+   
+   Uso Concreto 1: Inversión Basada en Metas con Glide-Path Automático
+   - Algoritmo cuantitativo que recalibra la curva de riesgo en función del 
+     tiempo restante para la meta (ej. Universidad de los hijos en 8 años).
+   - A medida que se acerca la fecha objetivo, el modelo reduce progresivamente 
+     la exposición a renta variable y transfiere capital a renta fija de corto plazo 
+     y preservación de capital.
+
+   Uso Concreto 2: Rebalanceo Tributaria y Transaccionalmente Eficiente
+   - El algoritmo evalúa desvíos de ponderación y ejecuta rebalanceos usando 
+     los nuevos aportes periódicos antes de vender activos, minimizando costos 
+     de transacción e impacto fiscal.
+
+   Uso Concreto 3: Alertas Predictivas de Desviación de Metas
+   - Notificaciones proactivas generadas por IA: "Al ritmo actual de aportes 
+     y volatilidad proyectada, existe una probabilidad del 82% de alcanzar la meta. 
+     Se sugiere incrementar USD $35 mensuales para asegurar el 95% de confianza".
+
+
+C. SEGMENTO: EMPRESAS CON EXCESO DE CAJA (TESORERÍA CORPORATIVA)
+   Necesidad: Liquidez inmediata, preservación estricta de capital, rendimiento 
+   superior a cuenta corriente sin asumir riesgo de crédito.
+   
+   Uso Concreto 1: Motor de Cash Flow Forecasting y Asignación por Tramos de Liquidez
+   - Modelos de series de tiempo que analizan los flujos históricos de cobros, 
+     pagos de nómina, proveedores e impuestos de la empresa.
+   - Separa el saldo ocioso en tramos de liquidez:
+     * Tramo Inmediato (T+0 / T+1): Money Market y Bonos del Tesoro ultracortos.
+     * Tramo Corto (30-90 días): ETFs de renta fija corporativa investment grade 
+       de muy corta duración.
+
+   Uso Concreto 2: Optimización de Duración y Riesgo de Tasa
+   - El motor cuantitativo ajusta la duración efectiva del portafolio en respuesta 
+     a las curvas de tasas de interés de la FED, protegiendo a la tesorería 
+     de minusvalías por movimientos de tasas.
+
+   Uso Concreto 3: Modelo Híbrido Biónico de Asesoría Corporativa
+   - Los reportes analíticos y propuestas de asignación son estructurados por IA, 
+     pero validados y presentados al CFO o tesorero corporativo por un banquero 
+     institucional de BTG Pactual, asegurando el estándar de servicio de banca 
+     de inversión.
+
+
+4. GOBERNANZA DE IA Y GESTIÓN DE RIESGO DE MODELO
+--------------------------------------------------------------------------------
+1. Guardrails Algorítmicos Fuera de Modelo:
+   Límites duros preprogramados de concentración máxima por emisor (máx 15%), 
+   rotación diaria máxima (máx 5% del NAV) y límites de desviación.
+2. Circuit Breakers Automáticos:
+   Si el VIX o los índices de volatilidad superan umbrales críticos predefinidos, 
+   el rebalanceo automático entra en pausa preventiva ("modo solo lectura") 
+   hasta evaluación del Comité de Inversiones.
+3. Explicabilidad y Trazabilidad (Audit Trail):
+   Cada recomendación y rebalanceo cuenta con un registro inmutable del vector 
+   de pesos, inputs de mercado y versión del modelo para auditoría regulatoria.
+4. Seguridad de la Información:
+   Aislamiento de datos por cliente (multi-tenant con cifrado en reposo AES-256), 
+   defensa activa contra prompt injection y cumplimiento de estándares 
+   SOC 2 Type II y PCI-DSS.
+
+================================================================================

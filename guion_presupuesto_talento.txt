@@ -1,0 +1,154 @@
+================================================================================
+GUION DE EXPOSICIÓN EJECUTIVA — BTG COMPASS
+Secciones: Presupuesto ($25M) y Talento ("BTG Compass Lab")
+Rol: Líder de Tecnología y Operaciones
+Tono: Banca de Inversión / Comité Estratégico (Directo, cuantitativo, sin clichés)
+Tiempo estimado: 3 a 4 minutos en total
+================================================================================
+
+[ENTRADA / TRANSICIÓN HACIA PRESUPUESTO]
+"Buenas tardes, miembros del Comité y señores inversionistas. 
+
+Habiendo entendido la propuesta de valor de BTG Compass y cómo capturamos los 
+tres segmentos de mercado, paso a detallar la asignación de capital de los 
+USD $25 millones disponibles y la estructura operativa de talento que hace 
+viable este retorno.
+
+
+--------------------------------------------------------------------------------
+PARTE 1: PRESUPUESTO — ASIGNACIÓN DISCIPLINADA DE USD $25M
+(Tiempo estimado: 1:45 min)
+--------------------------------------------------------------------------------
+
+[POSTURA: Firme, señalando la lámina de distribución de capital]
+
+'Nuestra tesis de asignación de capital responde a una regla de oro en banca 
+de inversión: no sobreinvertir en marketing antes de tener un motor de producto 
+probado, robusto y blindado regulatoriamente. Los USD $25M están planificados 
+para un horizonte de 24 a 36 meses, cubriendo el burn rate hasta alcanzar el 
+punto de equilibrio operativo.
+
+La distribución es la siguiente:
+
+1. TECNOLOGÍA — USD $8 millones (32% del presupuesto):
+   Es nuestra línea de inversión principal porque el motor cuantitativo ES el 
+   producto. Si el algoritmo de optimización o la ejecución fallan, no hay 
+   campaña publicitaria que salve la reputación de BTG Pactual. 
+   Estos $8M financian el motor cuantitativo de media-varianza, la capa de 
+   IA generativa para explicabilidad, las integraciones API de ejecución 
+   y el dashboard institucional de riesgo en tiempo real.
+
+2. ADQUISICIÓN Y MARKETING — USD $6 millones (24%):
+   Distribuido de forma asimétrica y eficiente en tres frentes:
+   - Adquisición digital y gamificada para Jóvenes (CAC objetivo de $25 a $35).
+   - Marketing de planeación financiera por metas patrimoniales para Familias.
+   - Equipo comercial B2B de venta consultiva para Tesorerías Corporativas, 
+     donde pocos clientes generan el 60% del volumen inicial de AUM.
+
+3. TALENTO — USD $4 millones (16%):
+   Detallado bajo la iniciativa "BTG Compass Lab", enfocado en maximizar 
+   eficiencia de costos y retención de talento clave.
+
+4. COMPLIANCE Y MARCO REGULATORIO — USD $3 millones (12%):
+   A diferencia de una startup fintech que asume el riesgo regulatorio como un 
+   detalle menor, en BTG lo presupuestamos con rigor. Este capital cubre la 
+   obtención y homologación de licencias de asesoría de inversión automatizada 
+   país por país en Centroamérica, iniciando con Panamá como hub regulatorio.
+
+5. ALIANZAS CON CUSTODIOS Y BROKERS — USD $2 millones (8%):
+   Financia la integración técnica y los acuerdos de custodia institucional. 
+   BTG Compass no gasta decenas de millones construyendo infraestructura de 
+   custodia desde cero; nos apalancamos en infraestructura existente vía API, 
+   haciendo viable este presupuesto.
+
+6. RESERVA DE CONTINGENCIA Y GESTIÓN DE RIESGO — USD $2 millones (8%):
+   Fondo reservado específicamente para contingencias de modelo y pruebas 
+   de estrés operacionales ante volatilidades extremas de mercado.
+
+En resumen: El 60% de los recursos está blindando la tecnología, la regulación 
+y la seguridad de ejecución. No quemamos capital en adquisición hueca.'
+
+
+--------------------------------------------------------------------------------
+PARTE 2: ESTRATEGIA DE TALENTO — "BTG COMPASS LAB"
+(Tiempo estimado: 1:30 min)
+--------------------------------------------------------------------------------
+
+[TRANSICIÓN: Conectando tecnología con personas]
+
+'Ahora bien: la mejor tecnología del mundo no opera sola. Para ejecutar esto 
+diseñamos el "BTG Compass Lab", una estructura de talento que nos permite 
+competir contra las grandes fintechs y consultoras globales con una estructura 
+de costos sumamente controlada.
+
+Los USD $4 millones de talento se desglosan en 4 pilares estratégicos:
+
+1. NÚCLEO TÉCNICO REGIONAL — USD $2 millones:
+   Reclutamos quants, ingenieros de Machine Learning y especialistas en 
+   compliance directamente en los países piloto, como Costa Rica y Guatemala. 
+   Esto genera un doble beneficio: reduce drásticamente el costo de nómina 
+   frente a contratar en Wall Street o Europa, y nos da talento con conocimiento 
+   normativo e idiosincrasia financiera local desde el día uno.
+
+2. MODELO DE ROTACIÓN JUNIOR Y MENTORÍA SENIOR — USD $1 millón:
+   El diferencial de BTG Pactual frente a una startup es nuestra marca y escuela 
+   financiera. Incorporamos talento joven recién egresado de alto rendimiento 
+   para trabajar codo a codo con Portfolio Managers y Banqueros Senior de BTG. 
+   Ofrecemos lo que ninguna fintech puede igualar: capital de marca, rigor de 
+   banca de inversión y velocidad de ejecución ágil.
+
+3. MODELO HÍBRIDO PARA CUENTAS CORPORATIVAS:
+   Esto es crítico para el panel: en el segmento empresarial, un tesorero no 
+   le entrega USD $5 millones de liquidez a un algoritmo sin ver a nadie. 
+   Por eso, no eliminamos al asesor humano en empresas; lo potenciamos con IA. 
+   La IA genera el análisis de flujo de caja y la propuesta de portafolio, y 
+   nuestro banquero de relación cierra la cuenta. Creamos además una línea 
+   de carrera interna: de analista cuantitativo a asesor institucional híbrido.
+
+4. ALINEACIÓN DE INCENTIVOS Y MARCA EMPLEADORA — USD $1 millón:
+   - $700K en compensación variable atada directamente al crecimiento del AUM 
+     (activos bajo administración) y a la estabilidad de los algoritmos.
+   - $300K en Employer Branding universitario en las principales facultades 
+     de ingeniería, finanzas y matemáticas de Centroamérica, utilizando el propio 
+     desarrollo de BTG Compass como caso de estudio.
+
+
+--------------------------------------------------------------------------------
+CIERRE CONTUNDENTE FRENTE AL PANEL
+(Tiempo estimado: 30 segundos)
+--------------------------------------------------------------------------------
+
+'Señores inversionistas: Con USD $25 millones, BTG Compass no está comprando 
+humo publicitario ni armando un chatbot genérico. Estamos construyendo una 
+fábrica cuantitativa de inversión escalable, respaldada por la disciplina 
+financiera de BTG Pactual, con capacidad de llegar a USD $500 millones en AUM 
+y generar flujos de comisión recurrentes de más de USD $5 millones anuales.
+
+Quedo a su disposición para profundizar en las métricas técnicas y financieras. 
+Muchas gracias.'
+
+
+================================================================================
+RESPUESTAS RÁPIDAS A PREGUNTAS DIFÍCILES DEL JURADO (CHEAT SHEET)
+================================================================================
+
+P1: "¿Por qué asignar $8M a tecnología si ya existen soluciones white-label?"
+R: "Las soluciones de marca blanca no se integran de forma nativa a la gestión 
+de riesgo institucional de BTG ni permiten la arquitectura híbrida que exige 
+el cliente corporativo. Desarrollar la capa cuantitativa propia con custodios 
+vía API nos asegura control total del riesgo de modelo y márgenes de utilidad 
+netos más altos a largo plazo."
+
+P2: "¿$3M en regulatorio no es excesivo?"
+R: "En Centroamérica no existe un pasaporte regulatorio único como en la Unión 
+Europea. Si no presupuestamos $3M para licencias locales independientes y 
+estructuración jurídica, el proyecto se detendría en el mes 8 por bloqueos 
+de los reguladores locales. En BTG la prudencia regulatoria es ventaja competitiva."
+
+P3: "¿Por qué retendría talento joven BTG Compass frente a una oferta en dólares de EE.UU.?"
+R: "Combinamos salarios locales competitivos con esquemas de bonos variables 
+indexados al AUM del fondo, sumado a la mentoría directa con líderes de BTG 
+Pactual. Les damos la oportunidad de diseñar la infraestructura de inversión 
+de toda la región, un impacto profesional que ninguna posición remota genérica 
+les puede ofrecer."
+================================================================================
